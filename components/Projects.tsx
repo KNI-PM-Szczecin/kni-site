@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FadeUp } from "@/components/ui/motion";
-import planpmImg from "@/app/planpm/android/Screenshot_1778412597.png";
+import { FadeUp, StaggerGrid, StaggerItem } from "@/components/ui/motion";
+const planpmImg = { src: "/projects/plan_pm.png" };
+const airdronImg = { src: "/projects/airdrone_pm.png" };
+const rpsImg = { src: "/projects/rock_paper_scissors.png" };
 
 const PROJECTS = [
   {
@@ -32,7 +34,7 @@ const PROJECTS = [
     description:
       "Budowa drona FPV od podstaw — dobór ramy, druk 3D komponentów, konfiguracja firmware Betaflight/iNav, kalibracja sensorów i tuning PID. Projekt sprzętowy prowadzony w organizacji KNI na GitHubie.",
     members: 0,
-    image: null,
+    image: airdronImg.src,
     github: "https://github.com/KNI-PM-Szczecin/airdrone_pm",
   },
   {
@@ -62,7 +64,7 @@ const PROJECTS = [
     description:
       "Aplikacja webowa do gry w kamień–papier–nożyce z wykrywaniem gestów dłoni w czasie rzeczywistym (MediaPipe + Flask). Przygotowana na Marinaria 2026.",
     members: 0,
-    image: null,
+    image: rpsImg.src,
     github: "https://github.com/KNI-PM-Szczecin/rock-paper-scissors",
   },
 ];
@@ -123,17 +125,17 @@ export default function Projects() {
         </FadeUp>
 
         {/* Cards grid */}
-        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <StaggerGrid layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <AnimatePresence mode="popLayout">
           {visible.map((project) => (
+            <StaggerItem key={project.title} layout>
             <motion.article
-              key={project.title}
               layout
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.25 }}
-              className="bg-white border border-gray-200 rounded-xl overflow-hidden flex flex-col hover:border-gray-300 transition-colors"
+              className="bg-white border border-gray-200 rounded-xl overflow-hidden flex flex-col hover:border-gray-300 transition-colors h-full"
             >
               {/* Image */}
               <div className="aspect-[16/9] bg-gray-50 overflow-hidden flex-shrink-0">
@@ -192,9 +194,10 @@ export default function Projects() {
                 </div>
               </div>
             </motion.article>
+            </StaggerItem>
           ))}
           </AnimatePresence>
-        </motion.div>
+        </StaggerGrid>
 
       </div>
     </section>

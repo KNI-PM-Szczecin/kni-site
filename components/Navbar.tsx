@@ -13,7 +13,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import logo from "@/app/logo/kni_black_pl_png1024.png";
+const logo = "/logo/kni_black_pl_1024.png";
 
 const NAV_LINKS = [
   { href: "#o-kole", label: "O kole" },

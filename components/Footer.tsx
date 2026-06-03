@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { GitFork, ExternalLink, Mail } from "lucide-react";
-import logo from "@/app/logo/kni_black_pl_png1024.png";
+const logo = "/logo/kni_black_pl_1024.png";
 
 export default function Footer() {
   return (

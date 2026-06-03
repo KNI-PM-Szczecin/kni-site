@@ -8,23 +8,23 @@ import { FadeUp, StaggerGrid, StaggerItem } from "@/components/ui/motion";
 const FAQS = [
   {
     question: "Czy muszę mieć doświadczenie, żeby dołączyć?",
-    answer: "Placeholder — wpisz odpowiedź tutaj.",
+    answer: "Nie, absolutnie nie — liczą się chęci! Wszystkiego uczymy się na bieżąco. Zawsze możesz pytać starszych kolegów z koła, którzy chętnie pomogą.",
   },
   {
     question: "Ile czasu tygodniowo zajmuje udział w kole?",
-    answer: "Placeholder — wpisz odpowiedź tutaj.",
+    answer: "Różnie — decyzja należy do Ciebie. Zależy, w ile projektów chcesz się zaangażować i jak bardzo chcesz się rozwijać.",
   },
   {
     question: "Czy mogę dołączyć na dowolnym roku studiów?",
-    answer: "Placeholder — wpisz odpowiedź tutaj.",
+    answer: "Tak, na dowolnym — nawet na magisterce. Nie ma żadnych ograniczeń rocznikowych.",
   },
   {
-    question: "Jak wyglądają spotkania koła?",
-    answer: "Placeholder — wpisz odpowiedź tutaj.",
+    question: "Czy można zrezygnować z koła?",
+    answer: "Tak, można — nic nie jest przymusowe.",
   },
   {
-    question: "Czy działalność w kole wlicza się do osiągnięć studenckich?",
-    answer: "Placeholder — wpisz odpowiedź tutaj.",
+    question: "Jak dołączyć do koła?",
+    answer: "Zescrolluj niżej — znajdziesz tam formularz kontaktowy i wszystkie potrzebne informacje.",
   },
 ];
 

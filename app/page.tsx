@@ -1,6 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
+import Events from "@/components/Events";
+import Hackathons from "@/components/Hackathons";
 import Team from "@/components/Team";
 import Join from "@/components/Join";
 import FAQ from "@/components/FAQ";
@@ -14,6 +16,8 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <Projects />
+        <Events />
+        <Hackathons />
         <Team />
         <Join />
         <FAQ />
