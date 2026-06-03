@@ -7,6 +7,8 @@ const planpmImg = { src: "/projects/plan_pm.png" };
 const airdronImg = { src: "/projects/airdrone_pm.png" };
 const rpsImg = { src: "/projects/rock_paper_scissors.png" };
 const fryderykImg = { src: "/projects/fryderyk.png" };
+const vnsImg = { src: "/projects/vns.png" };
+const navigatorImg = { src: "/projects/navigator_pm.png" };
 
 const PROJECTS = [
   {
@@ -26,7 +28,7 @@ const PROJECTS = [
     description:
       "Post-apokaliptyczny Extraction Shooter połączony z Visual Novel. Dzień — wychodzisz na pustkowia, scavenging i walka z mutantami. Noc — baza w opuszczonym hangarze, relacje z NPC, kontrakty i losowe eventy. FPP, styl komiksowy, silnik Unity.",
     members: 0,
-    image: null,
+    image: vnsImg.src,
   },
   {
     category: "Hardware",
@@ -45,7 +47,7 @@ const PROJECTS = [
     description:
       "Skanujesz kod QR przy sali w budynku uczelni — aplikacja tworzy ścieżkę na wirtualnej mapie i prowadzi Cię do wybranego pomieszczenia.",
     members: 0,
-    image: null,
+    image: navigatorImg.src,
     github: "https://github.com/KNI-PM-Szczecin/NavigatorPM",
   },
   {
