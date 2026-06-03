@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# KNI — Strona internetowa Koła Naukowego Informatyki
 
-## Getting Started
+Strona landing page Koła Naukowego Informatyki Politechniki Morskiej w Szczecinie.
 
-First, run the development server:
+## Stack
+
+- **Next.js 16** (App Router, static export)
+- **Tailwind CSS v4**
+- **shadcn/ui** (base-nova / @base-ui/react)
+- **Framer Motion**
+
+## Uruchomienie lokalne
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Strona dostępna pod `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Budowanie
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+## Struktura
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/
+  page.tsx          # Główna strona — składa wszystkie sekcje
+  globals.css       # Tailwind v4 theme (@theme inline)
+  layout.tsx        # Fonty (Inter, Geist Mono), metadane
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+components/
+  Navbar.tsx        # Nawigacja z mobile sheet
+  Hero.tsx          # Sekcja główna
+  About.tsx         # O kole + statystyki
+  Projects.tsx      # Projekty z filtrowaniem
+  Events.tsx        # Oblicza IT (karuzela zdjęć)
+  Hackathons.tsx    # Hackathony (karuzela zdjęć)
+  AutoCarousel.tsx  # Reużywalna karuzela z Ken Burns + crossfade
+  Team.tsx          # Zespół z avatarami i tagami Discord
+  Join.tsx          # Jak dołączyć
+  FAQ.tsx           # Najczęstsze pytania
+  Discord.tsx       # Widget serwera Discord
+  Footer.tsx        # Stopka
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+public/
+  logo/             # Logo KNI (warianty kolorystyczne, PL/EN)
+  members/          # Zdjęcia członków zespołu
+  projects/         # Zdjęcia projektów
+  hackathons/       # Zdjęcia z hackathonów
+  oblicza_it/       # Zdjęcia z eventów Oblicza IT
+```
