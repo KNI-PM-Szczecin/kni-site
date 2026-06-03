@@ -6,6 +6,7 @@ import { FadeUp, StaggerGrid, StaggerItem } from "@/components/ui/motion";
 const planpmImg = { src: "/projects/plan_pm.png" };
 const airdronImg = { src: "/projects/airdrone_pm.png" };
 const rpsImg = { src: "/projects/rock_paper_scissors.png" };
+const fryderykImg = { src: "/projects/fryderyk.png" };
 
 const PROJECTS = [
   {
@@ -54,7 +55,7 @@ const PROJECTS = [
     description:
       "Bot Discordowy monitorujący serwer KNI — loguje wiadomości, aktywność głosową i zdarzenia do bazy PostgreSQL. Umożliwia backfill całej historii i filtrowanie ruchu bot vs. człowiek.",
     members: 0,
-    image: null,
+    image: fryderykImg.src,
     github: "https://github.com/KNI-PM-Szczecin/Fryderyk",
   },
   {
