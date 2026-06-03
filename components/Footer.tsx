@@ -1,0 +1,62 @@
+import Image from "next/image";
+import { GitFork, ExternalLink, Mail } from "lucide-react";
+import logo from "@/app/logo/kni_black_pl_png1024.png";
+
+export default function Footer() {
+  return (
+    <footer
+      id="kontakt"
+      className="border-t border-gray-200 bg-white mt-auto"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+        {/* Left: logo + text */}
+        <div className="flex items-center gap-3">
+          <Image
+            src={logo}
+            alt="KNI — Koło Naukowe Informatyki"
+            width={32}
+            height={32}
+            className="flex-shrink-0"
+          />
+          <div>
+            <div className="text-sm font-semibold text-gray-900">
+              KNI — Politechnika Morska w Szczecinie
+            </div>
+            <div className="text-xs text-gray-400 mt-0.5">
+              © 2025 Koło Naukowe Informatyki
+            </div>
+          </div>
+        </div>
+
+        {/* Right: social links */}
+        <div className="flex items-center gap-6">
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-gray-500 hover:text-gray-900 flex items-center gap-1.5 transition-colors"
+          >
+            <GitFork className="w-4 h-4" />
+            GitHub
+          </a>
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-gray-500 hover:text-gray-900 flex items-center gap-1.5 transition-colors"
+          >
+            <ExternalLink className="w-4 h-4" />
+            LinkedIn
+          </a>
+          <a
+            href="mailto:kni@pm.szczecin.pl"
+            className="text-sm text-gray-500 hover:text-gray-900 flex items-center gap-1.5 transition-colors"
+          >
+            <Mail className="w-4 h-4" />
+            Email
+          </a>
+        </div>
+      </div>
+    </footer>
+  );
+}
