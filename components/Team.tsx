@@ -16,7 +16,7 @@ const TEAM = [
   { name: "Oskar Desecki", role: "Opiekun koła", discord: "drakula7627", photo: null },
   { name: "Karol Wroński", role: "Przewodniczący koła", discord: "kaj0x", photo: karolImg.src },
   { name: "Paweł Dutkiewicz", role: "Zastępca przewodniczącego", discord: "_dudeq_", photo: null },
-  { name: "Scarlet Dorozalska", role: "Zastępca przewodniczącego", discord: "scarletsun", photo: null },
+  { name: "Scarlet Dorożalska", role: "Zastępca przewodniczącego", discord: "scarletsun", photo: null },
   { name: "Piotr Wittig", role: "Sekretarz · Owner PlanPM", discord: "schoji", photo: piotrImg.src },
   { name: "Adrian Banaś", role: "Przewodniczący projektu VNS", discord: "adisman", photo: null },
   { name: "Aleksy Chojnowski", role: "Administrator Frytek", discord: "zekqkeku", photo: aleksyImg.src },

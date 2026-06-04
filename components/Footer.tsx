@@ -31,7 +31,7 @@ export default function Footer() {
         {/* Right: social links */}
         <div className="flex items-center gap-6">
           <a
-            href="https://github.com"
+            href="https://github.com/KNI-PM-Szczecin"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm text-gray-500 hover:text-gray-900 flex items-center gap-1.5 transition-colors"
@@ -40,13 +40,22 @@ export default function Footer() {
             GitHub
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/company/ko%C5%82o-naukowe-informatyki-pm/posts/?feedView=all"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm text-gray-500 hover:text-gray-900 flex items-center gap-1.5 transition-colors"
           >
             <ExternalLink className="w-4 h-4" />
             LinkedIn
+          </a>
+          <a
+            href="https://www.facebook.com/profile.php?id=61576733522142&locale=pl_PL"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-gray-500 hover:text-gray-900 flex items-center gap-1.5 transition-colors"
+          >
+            <ExternalLink className="w-4 h-4" />
+            Facebook
           </a>
           <a
             href="mailto:kni@pm.szczecin.pl"
