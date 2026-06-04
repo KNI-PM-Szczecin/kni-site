@@ -63,7 +63,7 @@ const PROJECTS = [
   {
     category: "Computer Vision",
     status: "Zakończony" as const,
-    title: "Kamień Papier Nożyce",
+    title: "Papier Kamień Nożyce",
     description:
       "Aplikacja webowa do gry w kamień–papier–nożyce z wykrywaniem gestów dłoni w czasie rzeczywistym (MediaPipe + Flask). Przygotowana na Marinalia 2026.",
     members: 0,
