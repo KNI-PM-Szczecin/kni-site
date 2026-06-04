@@ -65,7 +65,7 @@ const PROJECTS = [
     status: "Zakończony" as const,
     title: "Kamień Papier Nożyce",
     description:
-      "Aplikacja webowa do gry w kamień–papier–nożyce z wykrywaniem gestów dłoni w czasie rzeczywistym (MediaPipe + Flask). Przygotowana na Marinaria 2026.",
+      "Aplikacja webowa do gry w kamień–papier–nożyce z wykrywaniem gestów dłoni w czasie rzeczywistym (MediaPipe + Flask). Przygotowana na Marinalia 2026.",
     members: 0,
     image: rpsImg.src,
     github: "https://github.com/KNI-PM-Szczecin/rock-paper-scissors",
