@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FadeUp, StaggerGrid, StaggerItem } from "@/components/ui/motion";
+import { FadeUp } from "@/components/ui/motion";
 const planpmImg = { src: "/projects/plan_pm.png" };
 const airdronImg = { src: "/projects/airdrone_pm.png" };
 const rpsImg = { src: "/projects/rock_paper_scissors.png" };
@@ -128,11 +128,11 @@ export default function Projects() {
         </FadeUp>
 
         {/* Cards grid */}
-        <StaggerGrid layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <AnimatePresence mode="popLayout">
           {visible.map((project) => (
-            <StaggerItem key={project.title} layout>
             <motion.article
+              key={project.title}
               layout
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -197,10 +197,9 @@ export default function Projects() {
                 </div>
               </div>
             </motion.article>
-            </StaggerItem>
           ))}
           </AnimatePresence>
-        </StaggerGrid>
+        </motion.div>
 
       </div>
     </section>
