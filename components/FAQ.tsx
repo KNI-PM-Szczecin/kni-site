@@ -32,14 +32,14 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border-b border-gray-200 last:border-0">
+    <div className="border-b border-gray-200 dark:border-gray-800 last:border-0">
       <button
         onClick={() => setOpen((o) => !o)}
         className="w-full flex items-center justify-between gap-4 py-5 text-left"
       >
-        <span className="text-base font-medium text-gray-900">{question}</span>
+        <span className="text-base font-medium text-gray-900 dark:text-white">{question}</span>
         <motion.span
-          className="flex-shrink-0 text-gray-400"
+          className="flex-shrink-0 text-gray-400 dark:text-gray-500"
           animate={{ rotate: open ? 45 : 0 }}
           transition={{ duration: 0.2 }}
         >
@@ -55,7 +55,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
             transition={{ duration: 0.25, ease: [0.21, 0.47, 0.32, 0.98] }}
             style={{ overflow: "hidden" }}
           >
-            <p className="pb-5 text-sm text-gray-500 leading-relaxed">{answer}</p>
+            <p className="pb-5 text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{answer}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -65,19 +65,19 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 
 export default function FAQ() {
   return (
-    <section className="py-20 lg:py-32">
+    <section className="py-20 lg:py-32 bg-white dark:bg-gray-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-[1fr_1.8fr] gap-12 lg:gap-20">
 
           {/* Left */}
           <FadeUp>
-            <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
+            <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-3">
               FAQ
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white leading-tight">
               Masz pytania?
             </h2>
-            <p className="text-gray-500 mt-4 leading-relaxed">
+            <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed">
               Odpowiadamy na najczęściej zadawane pytania dotyczące koła.
             </p>
           </FadeUp>

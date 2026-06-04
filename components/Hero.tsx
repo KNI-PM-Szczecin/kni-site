@@ -27,7 +27,7 @@ export default function Hero() {
         {/* Left: staggered text entrance */}
         <div>
           <motion.p
-            className="text-sm font-medium text-gray-500 mb-6"
+            className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: EASE }}
@@ -36,17 +36,17 @@ export default function Hero() {
           </motion.p>
 
           <motion.h1
-            className="text-[2.75rem] sm:text-6xl lg:text-[4.5rem] font-bold leading-[1.03] tracking-tight text-gray-900 mb-7"
+            className="text-[2.75rem] sm:text-6xl lg:text-[4.5rem] font-bold leading-[1.03] tracking-tight text-gray-900 dark:text-white mb-7"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.1, ease: EASE }}
           >
             Budujemy przyszłość razem{" "}
-            <span className="text-blue-600">z&nbsp;technologią.</span>
+            <span className="text-blue-600 dark:text-blue-400">z&nbsp;technologią.</span>
           </motion.h1>
 
           <motion.p
-            className="text-gray-500 text-base sm:text-lg leading-relaxed mb-10 max-w-sm"
+            className="text-gray-500 dark:text-gray-400 text-base sm:text-lg leading-relaxed mb-10 max-w-sm"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2, ease: EASE }}
@@ -64,7 +64,7 @@ export default function Hero() {
             <Link href="#kontakt" className={cn(buttonVariants({ size: "lg" }), "rounded-full px-7 text-base")}>
               Dołącz do nas
             </Link>
-            <Link href="#projekty" className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+            <Link href="#projekty" className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors inline-flex items-center gap-1">
               Zobacz projekty →
             </Link>
           </motion.div>
@@ -77,16 +77,16 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.65, delay: 0.2, ease: EASE }}
         >
-          <div className="rounded-2xl overflow-hidden bg-gray-100">
+          <div className="rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-800">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={PHOTOS[0].src} alt={PHOTOS[0].alt} className="w-full h-full object-cover" loading="eager" />
           </div>
           <div className="grid grid-rows-2 gap-3">
-            <div className="rounded-2xl overflow-hidden bg-gray-100">
+            <div className="rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-800">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={PHOTOS[1].src} alt={PHOTOS[1].alt} className="w-full h-full object-cover" loading="eager" />
             </div>
-            <div className="rounded-2xl overflow-hidden bg-gray-100">
+            <div className="rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-800">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={PHOTOS[2].src} alt={PHOTOS[2].alt} className="w-full h-full object-cover" loading="eager" />
             </div>
@@ -95,7 +95,7 @@ export default function Hero() {
 
         {/* Mobile: single image */}
         <motion.div
-          className="lg:hidden rounded-2xl overflow-hidden bg-gray-100 aspect-video"
+          className="lg:hidden rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-800 aspect-video"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.3, ease: EASE }}
@@ -107,7 +107,7 @@ export default function Hero() {
 
       {/* Stats bar */}
       <motion.div
-        className="border-t border-gray-200 pt-8 flex flex-wrap items-center gap-y-6"
+        className="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-wrap items-center gap-y-6"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.5 }}
@@ -115,13 +115,13 @@ export default function Hero() {
         {STATS.map((stat, i) => (
           <motion.div
             key={stat.label}
-            className={cn("pr-10 sm:pr-16", i !== 0 && "pl-10 sm:pl-16 border-l border-gray-200")}
+            className={cn("pr-10 sm:pr-16", i !== 0 && "pl-10 sm:pl-16 border-l border-gray-200 dark:border-gray-800")}
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.55 + i * 0.08, ease: EASE }}
           >
-            <div className="text-3xl sm:text-4xl font-bold text-gray-900 leading-none">{stat.value}</div>
-            <div className="text-sm text-gray-400 mt-1.5">{stat.label}</div>
+            <div className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white leading-none">{stat.value}</div>
+            <div className="text-sm text-gray-400 dark:text-gray-500 mt-1.5">{stat.label}</div>
           </motion.div>
         ))}
       </motion.div>

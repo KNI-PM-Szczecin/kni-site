@@ -24,16 +24,16 @@ const TEAM = [
 
 export default function Team() {
   return (
-    <section id="zespol" className="bg-gray-50 py-20 lg:py-32">
+    <section id="zespol" className="bg-gray-50 dark:bg-gray-950 py-20 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeUp>
-          <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
+          <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-3">
             Zespół
           </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
             Ludzie za projektami.
           </h2>
-          <p className="text-gray-500 max-w-xl mb-12 leading-relaxed">
+          <p className="text-gray-500 dark:text-gray-400 max-w-xl mb-12 leading-relaxed">
             Nasz zarząd i core team — studenci z pasją do technologii i chęcią do działania.
           </p>
         </FadeUp>
@@ -41,13 +41,13 @@ export default function Team() {
         <StaggerGrid className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
           {TEAM.map((member) => (
             <StaggerItem key={member.name}>
-              <div className="bg-white border border-gray-200 rounded-xl p-6 flex flex-col items-center text-center hover:border-gray-300 transition-colors h-full">
+              <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 flex flex-col items-center text-center hover:border-gray-300 dark:hover:border-gray-700 transition-colors h-full">
                 {member.photo ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
                     src={member.photo}
                     alt={member.name}
-                    className="w-16 h-16 rounded-full object-cover mb-4 bg-gray-100 flex-shrink-0"
+                    className="w-16 h-16 rounded-full object-cover mb-4 bg-gray-100 dark:bg-gray-800 flex-shrink-0"
                     loading="lazy"
                     width={64}
                     height={64}
@@ -62,11 +62,11 @@ export default function Team() {
                     </span>
                   </div>
                 )}
-                <div className="text-sm font-semibold text-gray-900 leading-snug">{member.name}</div>
-                <div className="text-xs text-gray-400 mt-1 leading-snug">{member.role}</div>
+                <div className="text-sm font-semibold text-gray-900 dark:text-white leading-snug">{member.name}</div>
+                <div className="text-xs text-gray-400 dark:text-gray-500 mt-1 leading-snug">{member.role}</div>
                 <div className="flex items-center gap-1 mt-2">
-                  <DiscordIcon className="w-3 h-3 text-indigo-400 flex-shrink-0" />
-                  <span className="text-xs text-indigo-400 font-mono">{member.discord}</span>
+                  <DiscordIcon className="w-3 h-3 text-indigo-400 dark:text-indigo-300 flex-shrink-0" />
+                  <span className="text-xs text-indigo-400 dark:text-indigo-300 font-mono">{member.discord}</span>
                 </div>
               </div>
             </StaggerItem>
