@@ -13,9 +13,58 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "KNI — Koło Naukowe Informatyki",
+  metadataBase: new URL("https://knipm.edu.pl"),
+  title: {
+    default: "KNI — Koło Naukowe Informatyki",
+    template: "%s | KNI Politechnika Morska Szczecin",
+  },
   description:
-    "Koło Naukowe Informatyki Politechniki Morskiej w Szczecinie. Jesteśmy społecznością studentów pasjonujących się informatyką.",
+    "Koło Naukowe Informatyki Politechniki Morskiej w Szczecinie. Budujemy projekty, organizujemy hackathony i rozwijamy pasje studentów informatyki.",
+  keywords: [
+    "KNI",
+    "Koło Naukowe Informatyki",
+    "Politechnika Morska Szczecin",
+    "informatyka",
+    "studenci",
+    "projekty",
+    "hackathon",
+  ],
+  authors: [{ name: "KNI Politechnika Morska w Szczecinie" }],
+  openGraph: {
+    type: "website",
+    locale: "pl_PL",
+    url: "https://knipm.edu.pl",
+    siteName: "KNI Politechnika Morska Szczecin",
+    title: "KNI — Koło Naukowe Informatyki",
+    description:
+      "Budujemy projekty, organizujemy hackathony i rozwijamy pasje studentów informatyki na Politechnice Morskiej w Szczecinie.",
+    images: [
+      {
+        url: "/logo/kni_color_pl_1024.png",
+        width: 1024,
+        height: 1024,
+        alt: "Logo KNI Politechnika Morska Szczecin",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "KNI — Koło Naukowe Informatyki",
+    description:
+      "Budujemy projekty, organizujemy hackathony i rozwijamy pasje studentów informatyki na Politechnice Morskiej w Szczecinie.",
+    images: ["/logo/kni_color_pl_1024.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  alternates: {
+    canonical: "https://knipm.edu.pl",
+  },
 };
 
 export default function RootLayout({
