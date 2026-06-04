@@ -29,7 +29,7 @@ export default function AutoCarousel({
 
   return (
     <div
-      className={`relative overflow-hidden rounded-2xl aspect-video bg-gray-100 ${className}`}
+      className={`relative overflow-hidden rounded-2xl aspect-video bg-gray-100 dark:bg-gray-800 ${className}`}
     >
       <AnimatePresence mode="sync">
         <motion.div
