@@ -1,6 +1,6 @@
-# KNI — Strona internetowa Koła Naukowego Informatyki
+# KNI — Computer Science Students' Association Website
 
-Strona landing page Koła Naukowego Informatyki Politechniki Morskiej w Szczecinie.
+Landing page for the Computer Science Students' Association (KNI) at the Maritime University of Szczecin.
 
 ## Stack
 
@@ -9,47 +9,49 @@ Strona landing page Koła Naukowego Informatyki Politechniki Morskiej w Szczecin
 - **shadcn/ui** (base-nova / @base-ui/react)
 - **Framer Motion**
 
-## Uruchomienie lokalne
+## Local development
 
 ```bash
 npm install
 npm run dev
 ```
 
-Strona dostępna pod `http://localhost:3000`.
+Available at `http://localhost:3000`.
 
-## Budowanie
+## Build
 
 ```bash
 npm run build
 ```
 
-## Struktura
+Output is generated in the `out/` directory as a static site.
+
+## Structure
 
 ```
 app/
-  page.tsx          # Główna strona — składa wszystkie sekcje
+  page.tsx          # Main page — assembles all sections
   globals.css       # Tailwind v4 theme (@theme inline)
-  layout.tsx        # Fonty (Inter, Geist Mono), metadane
+  layout.tsx        # Fonts (Inter, Geist Mono), metadata
 
 components/
-  Navbar.tsx        # Nawigacja z mobile sheet
-  Hero.tsx          # Sekcja główna
-  About.tsx         # O kole + statystyki
-  Projects.tsx      # Projekty z filtrowaniem
-  Events.tsx        # Oblicza IT (karuzela zdjęć)
-  Hackathons.tsx    # Hackathony (karuzela zdjęć)
-  AutoCarousel.tsx  # Reużywalna karuzela z Ken Burns + crossfade
-  Team.tsx          # Zespół z avatarami i tagami Discord
-  Join.tsx          # Jak dołączyć
-  FAQ.tsx           # Najczęstsze pytania
-  Discord.tsx       # Widget serwera Discord
-  Footer.tsx        # Stopka
+  Navbar.tsx        # Navigation with mobile sheet
+  Hero.tsx          # Hero section
+  About.tsx         # About + stats
+  Projects.tsx      # Projects with filtering
+  Events.tsx        # Oblicza IT (photo carousel)
+  Hackathons.tsx    # Hackathons (photo carousel)
+  AutoCarousel.tsx  # Reusable carousel with Ken Burns + crossfade
+  Team.tsx          # Team members with avatars and Discord tags
+  Join.tsx          # How to join
+  FAQ.tsx           # Frequently asked questions
+  Discord.tsx       # Discord server widget
+  Footer.tsx        # Footer
 
 public/
-  logo/             # Logo KNI (warianty kolorystyczne, PL/EN)
-  members/          # Zdjęcia członków zespołu
-  projects/         # Zdjęcia projektów
-  hackathons/       # Zdjęcia z hackathonów
-  oblicza_it/       # Zdjęcia z eventów Oblicza IT
+  logo/             # KNI logos (color variants, PL/EN)
+  members/          # Team member photos
+  projects/         # Project screenshots
+  hackathons/       # Hackathon photos
+  oblicza_it/       # Oblicza IT event photos
 ```
