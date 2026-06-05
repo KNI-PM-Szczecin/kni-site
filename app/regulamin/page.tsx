@@ -54,7 +54,7 @@ export default function RegulaminPage() {
               <section>
                 <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">4. Prawa członka</h2>
                 <p>
-                  Członkowie KNI mają prawo do korzystania z zasobów koła, udziału w szkoleniach oraz reprezentowania koła na zewnątrz.
+                  Członkowie KNI mają prawo do korzystania z zasobów koła, udziału w szkoleniach oraz reprezentowania koła na wydarzeniach i imprezach.
                 </p>
               </section>
             </div>
