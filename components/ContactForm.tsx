@@ -273,7 +273,7 @@ export default function ContactForm() {
             className="mt-1 w-4 h-4 rounded border-gray-300 text-gray-900 focus:ring-gray-900 cursor-pointer"
           />
           <label htmlFor="agreement" className="text-sm text-gray-500 dark:text-gray-400 leading-snug cursor-pointer">
-            Zaznaczając to pole, potwierdzam chęć aktywnego udziału w działalności KNI Koło Naukowe Informatyków. Przyjmuję do wiadomości{" "}
+            Zaznaczając to pole, potwierdzam chęć aktywnego udziału w działalności KNI Koła Naukowego Informatyki. Przyjmuję do wiadomości{" "}
             <a href="/regulamin" target="_blank" className="text-gray-900 dark:text-white underline underline-offset-4 font-medium">
               krótki regulamin
             </a>

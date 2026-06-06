@@ -17,7 +17,7 @@ export default function RegulaminPage() {
               <section>
                 <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">1. Postanowienia ogólne</h2>
                 <p>
-                  Członkostwo w Kole Naukowym Informatyków (KNI) jest dobrowolne i otwarte dla wszystkich studentów zainteresowanych rozwojem w obszarze informatyki.
+                  Członkostwo w Kole Naukowym Informatyki (KNI) jest dobrowolne i otwarte dla wszystkich studentów zainteresowanych rozwojem w obszarze informatyki.
                 </p>
               </section>
 

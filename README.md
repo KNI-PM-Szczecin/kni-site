@@ -1,6 +1,6 @@
-# KNI — Computer Science Students' Association Website
+# KNI — Computer Science Association Website
 
-Landing page for the Computer Science Students' Association (KNI) at the Maritime University of Szczecin.
+Landing page for the Computer Science Association (KNI) at the Maritime University of Szczecin.
 
 ## Stack
 

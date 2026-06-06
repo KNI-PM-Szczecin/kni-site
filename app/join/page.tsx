@@ -18,7 +18,7 @@ export default function JoinPage() {
                 Dołącz do KNI
               </h1>
               <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto text-lg">
-                Wypełnij poniższy formularz, aby zgłosić chęć dołączenia do Koła Naukowego Informatyków. 
+                Wypełnij poniższy formularz, aby zgłosić chęć dołączenia do Koła Naukowego Informatyki. 
                 Skontaktujemy się z Tobą w celu ustalenia szczegółów.
               </p>
             </FadeUp>

@@ -84,14 +84,14 @@ export async function POST(req: Request) {
       });
 
       const mailOptions = {
-        from: `"KNI Koło Naukowe Informatyków" <${smtpFrom}>`,
+        from: `"KNI Koło Naukowe Informatyki" <${smtpFrom}>`,
         to: sanitizedData.email,
         subject: "Dziękujemy za zainteresowanie KNI!",
-        text: `Cześć ${sanitizedData.firstName}!\n\nDziękujemy za zgłoszenie do Koła Naukowego Informatyków (KNI). Potwierdzamy otrzymanie Twoich danych.\n\nKtoś z naszego koła odezwie się do Ciebie w najbliższym czasie, aby poinformować o kolejnych krokach i terminach spotkań.\n\nDo zobaczenia!\nZespół KNI`,
+        text: `Cześć ${sanitizedData.firstName}!\n\nDziękujemy za zgłoszenie do Koła Naukowego Informatyki (KNI). Potwierdzamy otrzymanie Twoich danych.\n\nKtoś z naszego koła odezwie się do Ciebie w najbliższym czasie, aby poinformować o kolejnych krokach i terminach spotkań.\n\nDo zobaczenia!\nZespół KNI`,
         html: `
           <div style="font-family: sans-serif; line-height: 1.6; color: #333;">
             <h2>Cześć ${sanitizedData.firstName}!</h2>
-            <p>Dziękujemy za zgłoszenie do <strong>Koła Naukowego Informatyków (KNI)</strong>. Potwierdzamy otrzymanie Twoich danych.</p>
+            <p>Dziękujemy za zgłoszenie do <strong>Koła Naukowego Informatyki (KNI)</strong>. Potwierdzamy otrzymanie Twoich danych.</p>
             <p>Ktoś z naszego koła odezwie się do Ciebie w najbliższym czasie, aby poinformować o kolejnych krokach i terminach spotkań.</p>
             <p>Do zobaczenia!<br><strong>Zespół KNI</strong></p>
             <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;">
