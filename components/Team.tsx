@@ -9,7 +9,7 @@ function DiscordIcon({ className }: { className?: string }) {
   );
 }
 const karolImg = { src: "/members/karol_wronski.jpg" };
-const piotrImg = { src: "/members/piotr_wittig.jpg" };
+const piotrImg = { src: "/members/piotr_wittig.png" };
 const aleksyImg = { src: "/members/aleksy_chojnowski.jpg" };
 
 const TEAM = [
