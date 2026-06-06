@@ -48,8 +48,19 @@ export default function ContactForm() {
     }
 
     try {
-      // 1. Save to Google Sheets (via existing Google Script)
+      console.log("Starting submission...");
       const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+      console.log("Config check:", { 
+        hasScript: !!scriptUrl, 
+        hasService: !!serviceId, 
+        hasTemplate: !!templateId, 
+        hasPublic: !!publicKey 
+      });
+
       if (scriptUrl) {
         await fetch(scriptUrl, {
           method: "POST",
