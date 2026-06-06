@@ -21,11 +21,11 @@ const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 
 export default function Hero() {
   return (
-    <section className="pt-10 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-14 items-center mb-14">
+    <section className="pt-10 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-24 items-center mb-20">
 
         {/* Left: staggered text entrance */}
-        <div>
+        <div className="z-10 relative">
           <motion.p
             className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-6"
             initial={{ opacity: 0, y: 20 }}
@@ -72,17 +72,17 @@ export default function Hero() {
 
         {/* Right: photo collage — desktop */}
         <motion.div
-          className="hidden lg:grid grid-cols-2 gap-3 h-[460px]"
+          className="hidden lg:grid grid-cols-2 gap-4 h-[440px] lg:translate-x-8"
           initial={{ opacity: 0, scale: 0.97 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.65, delay: 0.2, ease: EASE }}
         >
-          <div className="rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-800">
+          <div className="rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-800 shadow-2xl">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img 
               src={PHOTOS[0].src} 
               alt={PHOTOS[0].alt} 
-              className="w-full h-full object-cover object-[25%_center]" 
+              className="w-full h-full object-cover object-[15%_center]" 
               loading="eager" 
             />
           </div>
