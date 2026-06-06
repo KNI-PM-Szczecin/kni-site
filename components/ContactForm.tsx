@@ -48,8 +48,12 @@ export default function ContactForm() {
     }
 
     try {
-      // 1. Save to Google Sheets (via existing Google Script)
       const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+      // 1. Save to Google Sheets (via existing Google Script)
       if (scriptUrl) {
         await fetch(scriptUrl, {
           method: "POST",
@@ -60,10 +64,6 @@ export default function ContactForm() {
       }
 
       // 2. Send Confirmation Email via EmailJS (using SMTP Cloudmail)
-      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
-
       if (serviceId && templateId && publicKey) {
         await emailjs.send(
           serviceId,
@@ -75,7 +75,6 @@ export default function ContactForm() {
             major: formData.major,
             yearOfStudy: formData.yearOfStudy,
             albumNumber: formData.albumNumber,
-            // 'g-recaptcha-response': token, // Optional: EmailJS can also verify recaptcha
           },
           publicKey
         );
@@ -95,8 +94,7 @@ export default function ContactForm() {
     } catch (err) {
       console.error("Submission error:", err);
       setStatus("error");
-      const msg = err instanceof Error ? err.message : "Błąd połączenia z serwerem.";
-      setErrorMessage(`Wystąpił błąd: ${msg}`);
+      setErrorMessage("Wystąpił błąd podczas wysyłania zgłoszenia. Spróbuj ponownie później.");
     }
   };
 
