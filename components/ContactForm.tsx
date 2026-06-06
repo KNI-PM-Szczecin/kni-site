@@ -95,7 +95,8 @@ export default function ContactForm() {
     } catch (err) {
       console.error("Submission error:", err);
       setStatus("error");
-      setErrorMessage("Wystąpił błąd podczas wysyłania. Spróbuj ponownie później.");
+      const msg = err instanceof Error ? err.message : "Błąd połączenia z serwerem.";
+      setErrorMessage(`Wystąpił błąd: ${msg}`);
     }
   };
 
