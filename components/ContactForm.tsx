@@ -6,6 +6,7 @@ import { FadeUp } from "@/components/ui/motion";
 import { Button } from "@/components/ui/button";
 import { Loader2, CheckCircle2, AlertCircle } from "lucide-react";
 import { useTheme } from "next-themes";
+import emailjs from "@emailjs/browser";
 
 export default function ContactForm() {
   const { resolvedTheme } = useTheme();
@@ -33,10 +34,6 @@ export default function ContactForm() {
     const val = type === "checkbox" ? (e.target as HTMLInputElement).checked : value;
     setFormData((prev) => ({ ...prev, [name]: val }));
   };
-
-import emailjs from "@emailjs/browser";
-
-// ... inside the component, before the return ...
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
