@@ -180,7 +180,7 @@ export default function ContactForm() {
               required
               id="major"
               name="major"
-              maxLength={80}
+              maxLength={50}
               value={formData.major}
               onChange={handleChange}
               className="w-full px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white focus:ring-2 focus:ring-gray-900 dark:focus:ring-white outline-none transition-all"
