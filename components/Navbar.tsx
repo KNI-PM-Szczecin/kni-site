@@ -17,12 +17,13 @@ import { cn } from "@/lib/utils";
 const logo = "/logo/kni_black_pl_1024.png";
 
 const NAV_LINKS = [
-  { href: "#o-kole", label: "O kole" },
-  { href: "#projekty", label: "Projekty" },
-  { href: "#zespol", label: "Zespół" },
-  { href: "#hackathony", label: "Hackathony" },
-  { href: "#faq", label: "FAQ" },
-  { href: "#kontakt", label: "Kontakt" },
+  { href: "/#o-kole", label: "O kole" },
+  { href: "/#projekty", label: "Projekty" },
+  { href: "/#eventy", label: "Eventy" },
+  { href: "/#hackathony", label: "Hackathony" },
+  { href: "/#zespol", label: "Zespół" },
+  { href: "/#faq", label: "FAQ" },
+  { href: "/#kontakt", label: "Kontakt" },
 ];
 
 export default function Navbar() {
