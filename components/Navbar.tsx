@@ -75,7 +75,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-4">
           <ThemeToggle />
           <Link
-            href="#kontakt"
+            href="/join"
             className={cn(buttonVariants({ size: "sm" }), "rounded-full px-5")}
           >
             Dołącz do nas
@@ -118,7 +118,7 @@ export default function Navbar() {
                 ))}
               </nav>
               <Link
-                href="#kontakt"
+                href="/join"
                 className={cn(buttonVariants(), "mt-8 w-full rounded-full")}
                 onClick={() => setOpen(false)}
               >

@@ -20,9 +20,9 @@ const STEPS = [
   },
   {
     number: "03",
-    title: "Dołącz i działaj",
+    title: "Wypełnij formularz",
     description:
-      "Wybierz projekt, który Cię interesuje, i zacznij tworzyć razem z nami.",
+      "Uzupełnij swoje dane w formularzu zgłoszeniowym — to nasz oficjalny sposób na zarejestrowanie nowych członków.",
   },
 ];
 

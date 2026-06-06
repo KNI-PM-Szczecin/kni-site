@@ -1,6 +1,5 @@
 import { FadeUp } from "@/components/ui/motion";
-
-const FORM_URL = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+import Link from "next/link";
 
 export default function SignupCTA() {
   return (
@@ -17,15 +16,13 @@ export default function SignupCTA() {
             Wypełnij formularz zgłoszeniowy — skontaktujemy się z Tobą i opowiemy
             o najbliższych spotkaniach.
           </p>
-          <a
-            href={FORM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/join"
             className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white dark:bg-white text-gray-900 dark:text-gray-900 text-sm font-semibold hover:bg-gray-100 dark:hover:bg-gray-200 transition-colors"
           >
             Wypełnij formularz
             <span aria-hidden>→</span>
-          </a>
+          </Link>
         </FadeUp>
       </div>
     </section>
