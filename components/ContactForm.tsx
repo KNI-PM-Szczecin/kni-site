@@ -53,7 +53,14 @@ export default function ContactForm() {
         body: JSON.stringify({ ...formData, recaptchaToken: token }),
       });
 
-      const data = await response.json();
+      let data;
+      const contentType = response.headers.get("content-type");
+      if (contentType && contentType.includes("application/json")) {
+        data = await response.json();
+      } else {
+        // If not JSON, it might be an HTML error page (e.g. 404 from static server)
+        throw new Error(`Server returned ${response.status} ${response.statusText}`);
+      }
 
       if (response.ok) {
         setStatus("success");
@@ -69,11 +76,12 @@ export default function ContactForm() {
         recaptchaRef.current?.reset();
       } else {
         setStatus("error");
-        setErrorMessage(data.error || "Wystąpił błąd podczas wysyłania.");
+        setErrorMessage(data?.error || "Wystąpił błąd podczas wysyłania.");
       }
     } catch (err) {
+      console.error("Submission error:", err);
       setStatus("error");
-      setErrorMessage("Błąd połączenia z serwerem.");
+      setErrorMessage(err instanceof Error ? err.message : "Błąd połączenia z serwerem.");
     }
   };
 
