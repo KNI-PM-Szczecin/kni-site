@@ -1,5 +1,5 @@
 import { Mail, MessageSquare } from "lucide-react";
-import { getInitials, getAvatarColor } from "@/lib/avatar";
+import Image from "next/image";
 import { FadeUp, StaggerGrid, StaggerItem } from "@/components/ui/motion";
 
 const CONTACT_EMAIL = "o.desecki@pm.szczecin.pl";
@@ -65,13 +65,13 @@ export default function Join() {
           <FadeUp delay={0.15} className="flex items-start lg:pt-16">
             <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-8 w-full">
               <div className="flex items-center gap-4 mb-7">
-                <div
-                  className="w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0"
-                  style={{ backgroundColor: getAvatarColor("Oskar Desecki") }}
-                >
-                  <span className="text-white text-lg font-semibold leading-none select-none">
-                    {getInitials("Oskar Desecki")}
-                  </span>
+                <div className="relative w-14 h-14 rounded-full overflow-hidden flex-shrink-0 bg-gray-100 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
+                  <Image
+                    src="/members/oskar_desecki.png"
+                    alt="Oskar Desecki"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900 dark:text-white">Oskar Desecki</div>
