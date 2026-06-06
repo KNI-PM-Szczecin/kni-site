@@ -2,10 +2,10 @@ import { FadeUp } from "@/components/ui/motion";
 import AutoCarousel from "@/components/AutoCarousel";
 
 const SLIDES = [
-  { src: "/oblicza_it/1764787629964.png", alt: "Oblicza IT" },
-  { src: "/oblicza_it/1766778715302.jpg", alt: "Oblicza IT" },
-  { src: "/oblicza_it/1766778715755.jpg", alt: "Oblicza IT" },
-  { src: "/oblicza_it/1766778716024.jpg", alt: "Oblicza IT" },
+  { src: "/oblicza_it/1764787629964.webp", alt: "Oblicza IT" },
+  { src: "/oblicza_it/1766778715302.webp", alt: "Oblicza IT" },
+  { src: "/oblicza_it/1766778715755.webp", alt: "Oblicza IT" },
+  { src: "/oblicza_it/1766778716024.webp", alt: "Oblicza IT" },
 ];
 
 export default function Events() {
