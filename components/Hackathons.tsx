@@ -5,12 +5,12 @@ import { FadeUp } from "@/components/ui/motion";
 import AutoCarousel from "@/components/AutoCarousel";
 
 const SLIDES = [
-  { src: "/hackathons/1759862212517.jpg", alt: "Hackathon" },
-  { src: "/hackathons/1759862213721.jpg", alt: "Hackathon" },
-  { src: "/hackathons/1759862217008.jpg", alt: "Hackathon" },
-  { src: "/hackathons/1763587942958.jpg", alt: "Hackathon" },
-  { src: "/hackathons/1765574231626.jpg", alt: "Hackathon" },
-  { src: "/hackathons/piter.png", alt: "Hackathon - integracja" },
+  { src: "/hackathons/1759862212517.webp", alt: "Hackathon" },
+  { src: "/hackathons/1759862213721.webp", alt: "Hackathon" },
+  { src: "/hackathons/1759862217008.webp", alt: "Hackathon" },
+  { src: "/hackathons/1763587942958.webp", alt: "Hackathon" },
+  { src: "/hackathons/1765574231626.webp", alt: "Hackathon" },
+  { src: "/hackathons/piter.webp", alt: "Hackathon - integracja", objectPosition: "top" },
 ];
 
 export default function Hackathons() {

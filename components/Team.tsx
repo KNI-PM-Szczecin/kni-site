@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getInitials, getAvatarColor } from "@/lib/avatar";
 import { FadeUp, StaggerGrid, StaggerItem } from "@/components/ui/motion";
 
@@ -8,23 +9,30 @@ function DiscordIcon({ className }: { className?: string }) {
     </svg>
   );
 }
+type TeamMember = {
+  name: string;
+  role: string;
+  discord: string;
+  photo?: string;
+  position?: string;
+};
 
-const TEAM = [
-  { name: "Oskar Desecki", role: "Opiekun koła", discord: "drakula7627", photo: "/members/oskar_desecki.png" },
-  { 
-    name: "Bartosz Muczyński", 
-    role: "VIP · Konsultant merytoryczny", 
-    discord: "muczak", 
-    photo: "/members/bartosz_muczynski.png",
-    position: "center 20%" 
+const TEAM: TeamMember[] = [
+  { name: "Oskar Desecki", role: "Opiekun koła", discord: "drakula7627", photo: "/members/oskar_desecki.webp" },
+  {
+    name: "Bartosz Muczyński",
+    role: "VIP · Konsultant merytoryczny",
+    discord: "muczak",
+    photo: "/members/bartosz_muczynski.webp",
+    position: "center 20%"
   },
-  { name: "Karol Wroński", role: "Przewodniczący koła", discord: "kaj0x", photo: "/members/karol_wronski.jpg" },
-  { name: "Paweł Dutkiewicz", role: "Zastępca przewodniczącego", discord: "_dudeq_", photo: "/members/pawel_dutkiewicz.png" },
-  { name: "Scarlet Dorożalska", role: "Zastępca przewodniczącego", discord: "scarletsun", photo: "/members/scarlet_dorozalska.jpg" },
-  { name: "Piotr Wittig", role: "Sekretarz · Owner PlanPM", discord: "schoji", photo: "/members/piotr_wittig.png" },
-  { name: "Adrian Banaś", role: "Przewodniczący projektu VNS", discord: "adisman", photo: "/members/adrian_banas.png" },
-  { name: "Aleksy Chojnowski", role: "Członek honorowy · Multitool Creative & Admin", discord: "zekqkeku", photo: "/members/kot.png" },
-] as const;
+  { name: "Karol Wroński", role: "Przewodniczący koła", discord: "kaj0x", photo: "/members/karol_wronski.webp" },
+  { name: "Paweł Dutkiewicz", role: "Zastępca przewodniczącego", discord: "_dudeq_", photo: "/members/pawel_dutkiewicz.webp" },
+  { name: "Scarlet Dorożalska", role: "Zastępca przewodniczącego", discord: "scarletsun", photo: "/members/scarlet_dorozalska.webp" },
+  { name: "Piotr Wittig", role: "Sekretarz · Owner PlanPM", discord: "schoji", photo: "/members/piotr_wittig.webp" },
+  { name: "Adrian Banaś", role: "Przewodniczący projektu VNS", discord: "adisman", photo: "/members/adrian_banas.webp" },
+  { name: "Aleksy Chojnowski", role: "Członek honorowy · Multitool Creative & Admin", discord: "zekqkeku", photo: "/members/kot.webp" },
+];
 
 export default function Team() {
   return (
@@ -47,15 +55,13 @@ export default function Team() {
             <StaggerItem key={member.name}>
               <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 flex flex-col items-center text-center hover:border-gray-300 dark:hover:border-gray-700 transition-colors h-full">
                 {member.photo ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
+                  <Image
                     src={member.photo}
                     alt={member.name}
-                    className="w-16 h-16 rounded-full object-cover mb-4 bg-gray-100 dark:bg-gray-800 flex-shrink-0"
-                    style={{ objectPosition: (member as any).position || "center" }}
-                    loading="lazy"
                     width={64}
                     height={64}
+                    className="w-16 h-16 rounded-full object-cover mb-4 bg-gray-100 dark:bg-gray-800 flex-shrink-0"
+                    style={{ objectPosition: member.position || "center" }}
                   />
                 ) : (
                   <div
