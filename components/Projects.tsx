@@ -1,14 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { FadeUp } from "@/components/ui/motion";
-const planpmImg = { src: "/projects/plan_pm.png" };
-const airdronImg = { src: "/projects/airdrone_pm.png" };
-const rpsImg = { src: "/projects/rock_paper_scissors.png" };
-const fryderykImg = { src: "/projects/fryderyk.png" };
-const vnsImg = { src: "/projects/vns.png" };
-const navigatorImg = { src: "/projects/navigator_pm.png" };
+const planpmImg = { src: "/projects/plan_pm.webp" };
+const airdronImg = { src: "/projects/airdrone_pm.webp" };
+const rpsImg = { src: "/projects/rock_paper_scissors.webp" };
+const fryderykImg = { src: "/projects/fryderyk.webp" };
+const vnsImg = { src: "/projects/vns.webp" };
+const navigatorImg = { src: "/projects/navigator_pm.webp" };
 
 const PROJECTS = [
   {
@@ -141,14 +142,14 @@ export default function Projects() {
               className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden flex flex-col hover:border-gray-300 dark:hover:border-gray-700 transition-colors h-full"
             >
               {/* Image */}
-              <div className="aspect-[16/9] bg-gray-50 dark:bg-gray-800 overflow-hidden flex-shrink-0">
+              <div className="relative aspect-[16/9] bg-gray-50 dark:bg-gray-800 overflow-hidden flex-shrink-0">
                 {project.image ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
+                  <Image
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-sm text-gray-300 dark:text-gray-600">
