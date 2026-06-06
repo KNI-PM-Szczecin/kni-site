@@ -17,7 +17,7 @@ const TEAM = [
   { 
     name: "Bartosz Muczyński", 
     role: "VIP · Konsultant merytoryczny", 
-    discord: "bartosz_m", 
+    discord: "muczak", 
     photo: "/members/bartosz_muczynski.png",
     position: "center 20%" 
   },
@@ -26,7 +26,7 @@ const TEAM = [
   { name: "Scarlet Dorożalska", role: "Zastępca przewodniczącego", discord: "scarletsun", photo: "/members/scarlet_dorozalska.png" },
   { name: "Piotr Wittig", role: "Sekretarz · Owner PlanPM", discord: "schoji", photo: piotrImg.src },
   { name: "Adrian Banaś", role: "Przewodniczący projektu VNS", discord: "adisman", photo: "/members/adrian_banas.png" },
-  { name: "Aleksy Chojnowski", role: "Lemon", discord: "zekqkeku", photo: aleksyImg.src },
+  { name: "Aleksy Chojnowski", role: "Członek honorowy · Multitool Creative & Admin", discord: "zekqkeku", photo: aleksyImg.src },
 ] as const;
 
 export default function Team() {
