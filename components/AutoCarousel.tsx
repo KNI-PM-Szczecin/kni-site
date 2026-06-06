@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 interface Slide {
   src: string;
   alt?: string;
+  objectPosition?: string;
 }
 
 const INTERVAL = 5000;
@@ -56,6 +57,7 @@ export default function AutoCarousel({
             animate={{ scale: 1.1 }}
             transition={{ duration: INTERVAL / 1000 + 1, ease: "linear" }}
             className="w-full h-full object-cover"
+            style={{ objectPosition: slides[current].objectPosition ?? "center" }}
           />
         </motion.div>
       </AnimatePresence>

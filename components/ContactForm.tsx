@@ -31,6 +31,14 @@ export default function ContactForm() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;
+    if (name === "albumNumber") {
+      setFormData((prev) => ({ ...prev, albumNumber: value.replace(/\D/g, "").slice(0, 5) }));
+      return;
+    }
+    if (name === "firstName" || name === "lastName") {
+      setFormData((prev) => ({ ...prev, [name]: value.replace(/[0-9]/g, "") }));
+      return;
+    }
     const val = type === "checkbox" ? (e.target as HTMLInputElement).checked : value;
     setFormData((prev) => ({ ...prev, [name]: val }));
   };
@@ -188,16 +196,33 @@ export default function ContactForm() {
             <label className="text-sm font-medium text-gray-700 dark:text-gray-300" htmlFor="major">
               Kierunek
             </label>
-            <input
+            <select
               required
               id="major"
               name="major"
-              maxLength={150}
               value={formData.major}
               onChange={handleChange}
               className="w-full px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white focus:ring-2 focus:ring-gray-900 dark:focus:ring-white outline-none transition-all"
-              placeholder="Informatyka"
-            />
+            >
+              <option value="">Wybierz kierunek</option>
+              <option>Automatyka i robotyka</option>
+              <option>Geodezja i Kartografia</option>
+              <option>Geoinformatyka</option>
+              <option>Hydrografia</option>
+              <option>Informatyka</option>
+              <option>Inżynieria Modelowania Przestrzennego</option>
+              <option>Inżynieria przemysłowa i morskie elektrownie wiatrowe</option>
+              <option>Logistyka</option>
+              <option>Mechanika i Budowa Maszyn</option>
+              <option>Mechatronika</option>
+              <option>Nawigacja</option>
+              <option>Oceanotechnika</option>
+              <option>Oceanotechnika - Budowa Jachtów i Okrętów</option>
+              <option>Teleinformatyka</option>
+              <option>Transport</option>
+              <option>Zarządzanie</option>
+              <option>Zarządzanie i Inżynieria Produkcji</option>
+            </select>
           </div>
         </div>
 
@@ -226,7 +251,9 @@ export default function ContactForm() {
               required
               id="albumNumber"
               name="albumNumber"
-              maxLength={6}
+              inputMode="numeric"
+              maxLength={5}
+              pattern="[0-9]{1,5}"
               value={formData.albumNumber}
               onChange={handleChange}
               className="w-full px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white focus:ring-2 focus:ring-gray-900 dark:focus:ring-white outline-none transition-all"

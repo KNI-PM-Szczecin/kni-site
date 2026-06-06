@@ -1,14 +1,15 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const PHOTOS = [
-  { src: "/hero/team_work.png", alt: "Zespół KNI przy pracy" },
-  { src: "/hero/fl_studio.png", alt: "Programowanie" },
-  { src: "/hero/holo_lens.png", alt: "Laboratorium robotyki" },
+  { src: "/hero/team_work.webp", alt: "Zespół KNI przy pracy" },
+  { src: "/hero/fl_studio.webp", alt: "Programowanie" },
+  { src: "/hero/holo_lens.webp", alt: "Laboratorium robotyki" },
 ];
 
 const STATS = [
@@ -77,36 +78,34 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.65, delay: 0.2, ease: EASE }}
         >
-          <div className="rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-800 shadow-2xl">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img 
-              src={PHOTOS[0].src} 
-              alt={PHOTOS[0].alt} 
-              className="w-full h-full object-cover object-[15%_center]" 
-              loading="eager" 
+          <div className="relative rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-800 shadow-2xl">
+            <Image
+              src={PHOTOS[0].src}
+              alt={PHOTOS[0].alt}
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 1024px) 100vw, 45vw"
             />
           </div>
           <div className="grid grid-rows-2 gap-3">
-            <div className="rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-800">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={PHOTOS[1].src} alt={PHOTOS[1].alt} className="w-full h-full object-cover" loading="eager" />
+            <div className="relative rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-800">
+              <Image src={PHOTOS[1].src} alt={PHOTOS[1].alt} fill className="object-cover" sizes="(max-width: 1024px) 0px, 22vw" />
             </div>
-            <div className="rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-800">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={PHOTOS[2].src} alt={PHOTOS[2].alt} className="w-full h-full object-cover" loading="eager" />
+            <div className="relative rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-800">
+              <Image src={PHOTOS[2].src} alt={PHOTOS[2].alt} fill className="object-cover" sizes="(max-width: 1024px) 0px, 22vw" />
             </div>
           </div>
         </motion.div>
 
         {/* Mobile: single image */}
         <motion.div
-          className="lg:hidden rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-800 aspect-video"
+          className="lg:hidden relative rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-800 aspect-video"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.3, ease: EASE }}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={PHOTOS[0].src} alt={PHOTOS[0].alt} className="w-full h-full object-cover" loading="eager" />
+          <Image src={PHOTOS[0].src} alt={PHOTOS[0].alt} fill className="object-cover" priority sizes="100vw" />
         </motion.div>
       </div>
 
