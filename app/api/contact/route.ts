@@ -86,6 +86,14 @@ export async function POST(req: Request) {
       };
 
       await transporter.sendMail(mailOptions);
+    } else {
+      console.error("Missing SMTP configuration:", {
+        host: !!smtpHost,
+        port: !!smtpPort,
+        user: !!smtpUser,
+        pass: !!smtpPass,
+        from: !!smtpFrom
+      });
     }
 
     return NextResponse.json({ success: true });
