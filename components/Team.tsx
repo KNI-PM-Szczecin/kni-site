@@ -19,7 +19,7 @@ const TEAM = [
   { name: "Scarlet Dorożalska", role: "Zastępca przewodniczącego", discord: "scarletsun", photo: null },
   { name: "Piotr Wittig", role: "Sekretarz · Owner PlanPM", discord: "schoji", photo: piotrImg.src },
   { name: "Adrian Banaś", role: "Przewodniczący projektu VNS", discord: "adisman", photo: null },
-  { name: "Aleksy Chojnowski", role: "Administrator Frytek", discord: "zekqkeku", photo: aleksyImg.src },
+  { name: "Aleksy Chojnowski", role: "Lemon", discord: "zekqkeku", photo: aleksyImg.src },
 ] as const;
 
 export default function Team() {
