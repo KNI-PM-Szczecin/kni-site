@@ -7,6 +7,7 @@ const SLIDES = [
   { src: "/hackathons/1759862217008.jpg", alt: "Hackathon" },
   { src: "/hackathons/1763587942958.jpg", alt: "Hackathon" },
   { src: "/hackathons/1765574231626.jpg", alt: "Hackathon" },
+  { src: "/hackathons/piter.png", alt: "Hackathon - integracja" },
 ];
 
 export default function Hackathons() {

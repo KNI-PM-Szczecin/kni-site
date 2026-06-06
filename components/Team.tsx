@@ -13,12 +13,12 @@ const piotrImg = { src: "/members/piotr_wittig.jpg" };
 const aleksyImg = { src: "/members/aleksy_chojnowski.jpg" };
 
 const TEAM = [
-  { name: "Oskar Desecki", role: "Opiekun koła", discord: "drakula7627", photo: null },
+  { name: "Oskar Desecki", role: "Opiekun koła", discord: "drakula7627", photo: "/members/oskar_desecki.png" },
   { name: "Karol Wroński", role: "Przewodniczący koła", discord: "kaj0x", photo: karolImg.src },
-  { name: "Paweł Dutkiewicz", role: "Zastępca przewodniczącego", discord: "_dudeq_", photo: null },
-  { name: "Scarlet Dorożalska", role: "Zastępca przewodniczącego", discord: "scarletsun", photo: null },
+  { name: "Paweł Dutkiewicz", role: "Zastępca przewodniczącego", discord: "_dudeq_", photo: "/members/pawel_dutkiewicz.png" },
+  { name: "Scarlet Dorożalska", role: "Zastępca przewodniczącego", discord: "scarletsun", photo: "/members/scarlet_dorozalska.png" },
   { name: "Piotr Wittig", role: "Sekretarz · Owner PlanPM", discord: "schoji", photo: piotrImg.src },
-  { name: "Adrian Banaś", role: "Przewodniczący projektu VNS", discord: "adisman", photo: null },
+  { name: "Adrian Banaś", role: "Przewodniczący projektu VNS", discord: "adisman", photo: "/members/adrian_banas.png" },
   { name: "Aleksy Chojnowski", role: "Lemon", discord: "zekqkeku", photo: aleksyImg.src },
 ] as const;
 

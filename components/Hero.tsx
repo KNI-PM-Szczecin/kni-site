@@ -6,9 +6,9 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const PHOTOS = [
-  { src: "https://picsum.photos/seed/kni-team-work/800/900", alt: "Zespół KNI przy pracy" },
-  { src: "https://picsum.photos/seed/kni-code-screen/800/440", alt: "Programowanie" },
-  { src: "https://picsum.photos/seed/kni-robotics-lab/800/440", alt: "Laboratorium robotyki" },
+  { src: "/hero/team_work.png", alt: "Zespół KNI przy pracy" },
+  { src: "/hero/fl_studio.png", alt: "Programowanie" },
+  { src: "/hero/holo_lens.png", alt: "Laboratorium robotyki" },
 ];
 
 const STATS = [

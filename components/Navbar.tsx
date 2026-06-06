@@ -42,19 +42,12 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-3">
-          <Image
-            src={logo}
-            alt="KNI — Koło Naukowe Informatyki"
-            width={36}
-            height={36}
-            className="flex-shrink-0 dark:invert"
-            priority
-          />
+        {/* Logo Replacement: Stretched Text */}
+        <Link href="/" className="flex items-center group">
           <div className="leading-none">
-            <div className="text-sm font-bold text-gray-900 dark:text-white">KNI</div>
-            <div className="text-xs text-gray-400 mt-0.5">Politechnika Morska</div>
+            <div className="text-xl sm:text-2xl font-black tracking-tighter text-gray-900 dark:text-white uppercase transition-all group-hover:tracking-normal">
+              KNI <span className="text-gray-400 dark:text-gray-600 font-medium ml-2 text-sm sm:text-base tracking-normal normal-case">Politechnika Morska</span>
+            </div>
           </div>
         </Link>
 
@@ -95,15 +88,10 @@ export default function Navbar() {
               <SheetDescription className="sr-only">
                 Główne menu nawigacyjne
               </SheetDescription>
-              <div className="flex items-center gap-3 mb-10 mt-2">
-                <Image
-                  src={logo}
-                  alt="KNI"
-                  width={32}
-                  height={32}
-                  className="flex-shrink-0 dark:invert"
-                />
-                <div className="text-sm font-bold text-gray-900 dark:text-white">KNI</div>
+              <div className="flex items-center mb-10 mt-2">
+                <div className="text-xl font-black tracking-tighter text-gray-900 dark:text-white uppercase">
+                  KNI <span className="text-gray-400 dark:text-gray-600 font-medium ml-1 text-xs tracking-normal normal-case">Politechnika Morska</span>
+                </div>
               </div>
               <nav className="flex flex-col gap-1">
                 {NAV_LINKS.map((link) => (
