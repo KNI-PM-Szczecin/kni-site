@@ -93,16 +93,15 @@ export default function Navbar() {
                   KNI <span className="text-gray-400 dark:text-gray-600 font-medium ml-1 text-xs tracking-normal normal-case">Menu</span>
                 </div>
               </div>
-              <nav className="flex flex-col gap-2">
+              <nav className="flex flex-col gap-4 items-center justify-center py-8">
                 {NAV_LINKS.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="text-xl font-bold text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 py-3 transition-colors flex items-center justify-between group"
+                    className="text-2xl font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 py-2 transition-all hover:scale-110"
                     onClick={() => setOpen(false)}
                   >
                     {link.label}
-                    <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
                   </Link>
                 ))}
               </nav>
