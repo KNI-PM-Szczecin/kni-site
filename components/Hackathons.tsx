@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { FadeUp } from "@/components/ui/motion";
 import AutoCarousel from "@/components/AutoCarousel";
 
@@ -11,6 +14,8 @@ const SLIDES = [
 ];
 
 export default function Hackathons() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   return (
     <section id="hackathony" className="py-20 lg:py-32 bg-white dark:bg-gray-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,7 +23,11 @@ export default function Hackathons() {
 
           {/* Left: carousel */}
           <FadeUp>
-            <AutoCarousel slides={SLIDES} className="aspect-[4/5] sm:aspect-square lg:aspect-[4/5]" />
+            <AutoCarousel 
+              slides={SLIDES} 
+              onIndexChange={setCurrentIndex}
+              className="aspect-[4/5] sm:aspect-square lg:aspect-[4/5]" 
+            />
           </FadeUp>
 
           {/* Right: text */}
@@ -27,7 +36,13 @@ export default function Hackathons() {
               Hackathony
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white leading-tight mb-5">
-              Jeździmy. Jest fajnie.
+              {currentIndex === 5 ? (
+                <>
+                  Jeździmy. <span className="text-red-600">Jest silnie...</span>
+                </>
+              ) : (
+                "Jeździmy. Jest fajnie."
+              )}
             </h2>
             <p className="text-gray-500 dark:text-gray-400 leading-relaxed mb-4">
               Hackathony to jeden z naszych ulubionych sposobów na naukę i integrację — kilkanaście godzin kodowania, pomysłów i kawy razem z innymi pasjonatami z całej Polski.

@@ -13,19 +13,27 @@ const INTERVAL = 5000;
 export default function AutoCarousel({
   slides,
   className = "",
+  onIndexChange,
 }: {
   slides: Slide[];
   className?: string;
+  onIndexChange?: (index: number) => void;
 }) {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    const t = setInterval(
-      () => setCurrent((c) => (c + 1) % slides.length),
-      INTERVAL
-    );
+    const t = setInterval(() => {
+      const next = (current + 1) % slides.length;
+      setCurrent(next);
+      onIndexChange?.(next);
+    }, INTERVAL);
     return () => clearInterval(t);
-  }, [slides.length]);
+  }, [slides.length, current, onIndexChange]);
+
+  const handleManualChange = (index: number) => {
+    setCurrent(index);
+    onIndexChange?.(index);
+  };
 
   return (
     <div
@@ -60,7 +68,7 @@ export default function AutoCarousel({
         {slides.map((_, i) => (
           <button
             key={i}
-            onClick={() => setCurrent(i)}
+            onClick={() => handleManualChange(i)}
             aria-label={`Zdjęcie ${i + 1}`}
             className={`h-1.5 rounded-full transition-all duration-300 pointer-events-auto ${
               i === current
