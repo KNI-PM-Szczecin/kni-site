@@ -14,6 +14,7 @@ const aleksyImg = { src: "/members/aleksy_chojnowski.jpg" };
 
 const TEAM = [
   { name: "Oskar Desecki", role: "Opiekun koła", discord: "drakula7627", photo: "/members/oskar_desecki.png" },
+  { name: "Bartosz Muczyński", role: "VIP · Konsultant merytoryczny", discord: "bartosz_m", photo: null },
   { name: "Karol Wroński", role: "Przewodniczący koła", discord: "kaj0x", photo: karolImg.src },
   { name: "Paweł Dutkiewicz", role: "Zastępca przewodniczącego", discord: "_dudeq_", photo: "/members/pawel_dutkiewicz.png" },
   { name: "Scarlet Dorożalska", role: "Zastępca przewodniczącego", discord: "scarletsun", photo: "/members/scarlet_dorozalska.png" },

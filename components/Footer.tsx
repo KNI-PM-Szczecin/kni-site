@@ -10,22 +10,22 @@ export default function Footer() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
         {/* Left: logo + text */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-5">
           <Image
             src={logo}
             alt="KNI — Koło Naukowe Informatyki"
-            width={64}
-            height={64}
-            className="flex-shrink-0 dark:invert"
+            width={84}
+            height={84}
+            className="flex-shrink-0 dark:invert opacity-90 hover:opacity-100 transition-opacity"
           />
-          <div>
-            <div className="text-sm font-bold text-gray-900 dark:text-white">
+          <div className="space-y-1">
+            <div className="text-base font-bold text-gray-900 dark:text-white tracking-tight">
               KNI — Koło Naukowe Informatyki
             </div>
-            <div className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">
+            <div className="text-xs text-gray-400 dark:text-gray-500 font-medium">
               Politechnika Morska w Szczecinie
             </div>
-            <div className="text-[10px] text-gray-400 dark:text-gray-600 mt-2">
+            <div className="text-[10px] text-gray-400 dark:text-gray-600 pt-2 uppercase tracking-widest font-bold">
               © 2025 Wszystkie prawa zastrzeżone
             </div>
           </div>

@@ -79,7 +79,12 @@ export default function Hero() {
         >
           <div className="rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-800">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={PHOTOS[0].src} alt={PHOTOS[0].alt} className="w-full h-full object-cover" loading="eager" />
+            <img 
+              src={PHOTOS[0].src} 
+              alt={PHOTOS[0].alt} 
+              className="w-full h-full object-cover object-[25%_center]" 
+              loading="eager" 
+            />
           </div>
           <div className="grid grid-rows-2 gap-3">
             <div className="rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-800">

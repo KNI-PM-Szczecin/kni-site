@@ -18,7 +18,7 @@ export default function Hackathons() {
 
           {/* Left: carousel */}
           <FadeUp>
-            <AutoCarousel slides={SLIDES} />
+            <AutoCarousel slides={SLIDES} className="aspect-[4/5] sm:aspect-square lg:aspect-[4/5]" />
           </FadeUp>
 
           {/* Right: text */}
