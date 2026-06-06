@@ -13,13 +13,20 @@ const piotrImg = { src: "/members/piotr_wittig.jpg" };
 const aleksyImg = { src: "/members/aleksy_chojnowski.jpg" };
 
 const TEAM = [
-  { name: "Oskar Desecki", role: "Opiekun koła", discord: "drakula7627", photo: null },
+  { name: "Oskar Desecki", role: "Opiekun koła", discord: "drakula7627", photo: "/members/oskar_desecki.png" },
+  { 
+    name: "Bartosz Muczyński", 
+    role: "VIP · Konsultant merytoryczny", 
+    discord: "muczak", 
+    photo: "/members/bartosz_muczynski.png",
+    position: "center 20%" 
+  },
   { name: "Karol Wroński", role: "Przewodniczący koła", discord: "kaj0x", photo: karolImg.src },
-  { name: "Paweł Dutkiewicz", role: "Zastępca przewodniczącego", discord: "_dudeq_", photo: null },
-  { name: "Scarlet Dorożalska", role: "Zastępca przewodniczącego", discord: "scarletsun", photo: null },
+  { name: "Paweł Dutkiewicz", role: "Zastępca przewodniczącego", discord: "_dudeq_", photo: "/members/pawel_dutkiewicz.png" },
+  { name: "Scarlet Dorożalska", role: "Zastępca przewodniczącego", discord: "scarletsun", photo: "/members/scarlet_dorozalska.png" },
   { name: "Piotr Wittig", role: "Sekretarz · Owner PlanPM", discord: "schoji", photo: piotrImg.src },
-  { name: "Adrian Banaś", role: "Przewodniczący projektu VNS", discord: "adisman", photo: null },
-  { name: "Aleksy Chojnowski", role: "Lemon", discord: "zekqkeku", photo: aleksyImg.src },
+  { name: "Adrian Banaś", role: "Przewodniczący projektu VNS", discord: "adisman", photo: "/members/adrian_banas.png" },
+  { name: "Aleksy Chojnowski", role: "Członek honorowy · Multitool Creative & Admin", discord: "zekqkeku", photo: aleksyImg.src },
 ] as const;
 
 export default function Team() {
@@ -48,6 +55,7 @@ export default function Team() {
                     src={member.photo}
                     alt={member.name}
                     className="w-16 h-16 rounded-full object-cover mb-4 bg-gray-100 dark:bg-gray-800 flex-shrink-0"
+                    style={{ objectPosition: (member as any).position || "center" }}
                     loading="lazy"
                     width={64}
                     height={64}

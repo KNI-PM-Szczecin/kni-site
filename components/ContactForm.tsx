@@ -127,6 +127,7 @@ export default function ContactForm() {
               required
               id="firstName"
               name="firstName"
+              maxLength={35}
               value={formData.firstName}
               onChange={handleChange}
               className="w-full px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white focus:ring-2 focus:ring-gray-900 dark:focus:ring-white outline-none transition-all"
@@ -141,6 +142,7 @@ export default function ContactForm() {
               required
               id="lastName"
               name="lastName"
+              maxLength={35}
               value={formData.lastName}
               onChange={handleChange}
               className="w-full px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white focus:ring-2 focus:ring-gray-900 dark:focus:ring-white outline-none transition-all"
@@ -178,6 +180,7 @@ export default function ContactForm() {
               required
               id="major"
               name="major"
+              maxLength={150}
               value={formData.major}
               onChange={handleChange}
               className="w-full px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white focus:ring-2 focus:ring-gray-900 dark:focus:ring-white outline-none transition-all"
@@ -196,6 +199,7 @@ export default function ContactForm() {
               type="email"
               id="email"
               name="email"
+              maxLength={35}
               value={formData.email}
               onChange={handleChange}
               className="w-full px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white focus:ring-2 focus:ring-gray-900 dark:focus:ring-white outline-none transition-all"
@@ -210,6 +214,7 @@ export default function ContactForm() {
               required
               id="albumNumber"
               name="albumNumber"
+              maxLength={6}
               value={formData.albumNumber}
               onChange={handleChange}
               className="w-full px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white focus:ring-2 focus:ring-gray-900 dark:focus:ring-white outline-none transition-all"
