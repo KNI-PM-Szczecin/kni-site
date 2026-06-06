@@ -34,6 +34,10 @@ export default function ContactForm() {
     setFormData((prev) => ({ ...prev, [name]: val }));
   };
 
+import emailjs from "@emailjs/browser";
+
+// ... inside the component, before the return ...
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
@@ -47,41 +51,54 @@ export default function ContactForm() {
     }
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, recaptchaToken: token }),
-      });
-
-      let data;
-      const contentType = response.headers.get("content-type");
-      if (contentType && contentType.includes("application/json")) {
-        data = await response.json();
-      } else {
-        // If not JSON, it might be an HTML error page (e.g. 404 from static server)
-        throw new Error(`Server returned ${response.status} ${response.statusText}`);
-      }
-
-      if (response.ok) {
-        setStatus("success");
-        setFormData({
-          firstName: "",
-          lastName: "",
-          yearOfStudy: "",
-          major: "",
-          email: "",
-          albumNumber: "",
-          agreement: false,
+      // 1. Save to Google Sheets (via existing Google Script)
+      const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
+      if (scriptUrl) {
+        await fetch(scriptUrl, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain" },
+          body: JSON.stringify({ ...formData, recaptchaToken: token }),
         });
-        recaptchaRef.current?.reset();
-      } else {
-        setStatus("error");
-        setErrorMessage(data?.error || "Wystąpił błąd podczas wysyłania.");
       }
+
+      // 2. Send Confirmation Email via EmailJS (using SMTP Cloudmail)
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+      if (serviceId && templateId && publicKey) {
+        await emailjs.send(
+          serviceId,
+          templateId,
+          {
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            email: formData.email,
+            major: formData.major,
+            yearOfStudy: formData.yearOfStudy,
+            albumNumber: formData.albumNumber,
+            // 'g-recaptcha-response': token, // Optional: EmailJS can also verify recaptcha
+          },
+          publicKey
+        );
+      }
+
+      setStatus("success");
+      setFormData({
+        firstName: "",
+        lastName: "",
+        yearOfStudy: "",
+        major: "",
+        email: "",
+        albumNumber: "",
+        agreement: false,
+      });
+      recaptchaRef.current?.reset();
     } catch (err) {
       console.error("Submission error:", err);
       setStatus("error");
-      setErrorMessage(err instanceof Error ? err.message : "Błąd połączenia z serwerem.");
+      setErrorMessage("Wystąpił błąd podczas wysyłania. Spróbuj ponownie później.");
     }
   };
 
