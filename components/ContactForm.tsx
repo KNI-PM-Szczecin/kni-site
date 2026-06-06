@@ -53,13 +53,32 @@ export default function ContactForm() {
       const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
       const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
+      // Helper to sanitize input against CSV/Excel injection
+      const sanitizeSpreadsheetInput = (value: string | number | undefined) => {
+        if (value === undefined || value === null) return "";
+        const stringValue = String(value).trim();
+        if (/^[=+\-@\t\r]/.test(stringValue)) {
+          return `'${stringValue}`;
+        }
+        return stringValue;
+      };
+
+      const sanitizedData = {
+        firstName: sanitizeSpreadsheetInput(formData.firstName),
+        lastName: sanitizeSpreadsheetInput(formData.lastName),
+        yearOfStudy: sanitizeSpreadsheetInput(formData.yearOfStudy),
+        major: sanitizeSpreadsheetInput(formData.major),
+        email: sanitizeSpreadsheetInput(formData.email),
+        albumNumber: sanitizeSpreadsheetInput(formData.albumNumber),
+      };
+
       // 1. Save to Google Sheets (via existing Google Script)
       if (scriptUrl) {
         await fetch(scriptUrl, {
           method: "POST",
           mode: "no-cors",
           headers: { "Content-Type": "text/plain" },
-          body: JSON.stringify({ ...formData, recaptchaToken: token }),
+          body: JSON.stringify({ ...sanitizedData, recaptchaToken: token }),
         });
       }
 
@@ -68,14 +87,7 @@ export default function ContactForm() {
         await emailjs.send(
           serviceId,
           templateId,
-          {
-            firstName: formData.firstName,
-            lastName: formData.lastName,
-            email: formData.email,
-            major: formData.major,
-            yearOfStudy: formData.yearOfStudy,
-            albumNumber: formData.albumNumber,
-          },
+          sanitizedData,
           publicKey
         );
       }

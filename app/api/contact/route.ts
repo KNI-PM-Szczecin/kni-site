@@ -13,6 +13,26 @@ export async function POST(req: Request) {
       recaptchaToken 
     } = await req.json();
 
+    // Helper to sanitize input against CSV/Excel injection
+    const sanitizeSpreadsheetInput = (value: string | number | undefined) => {
+      if (value === undefined || value === null) return "";
+      const stringValue = String(value).trim();
+      // Prepend ' if the value starts with characters that could trigger formula execution
+      if (/^[=+\-@\t\r]/.test(stringValue)) {
+        return `'${stringValue}`;
+      }
+      return stringValue;
+    };
+
+    const sanitizedData = {
+      firstName: sanitizeSpreadsheetInput(firstName),
+      lastName: sanitizeSpreadsheetInput(lastName),
+      yearOfStudy: sanitizeSpreadsheetInput(yearOfStudy),
+      major: sanitizeSpreadsheetInput(major),
+      email: sanitizeSpreadsheetInput(email),
+      albumNumber: sanitizeSpreadsheetInput(albumNumber),
+    };
+
     // 1. Verify reCAPTCHA
     const recaptchaSecret = process.env.RECAPTCHA_SECRET_KEY;
     if (!recaptchaSecret) {
@@ -36,12 +56,7 @@ export async function POST(req: Request) {
       await fetch(scriptUrl, {
         method: "POST",
         body: JSON.stringify({
-          firstName,
-          lastName,
-          yearOfStudy,
-          major,
-          email,
-          albumNumber,
+          ...sanitizedData,
           timestamp: new Date().toISOString(),
         }),
         headers: {
@@ -70,12 +85,12 @@ export async function POST(req: Request) {
 
       const mailOptions = {
         from: `"KNI Koło Naukowe Informatyków" <${smtpFrom}>`,
-        to: email,
+        to: sanitizedData.email,
         subject: "Dziękujemy za zainteresowanie KNI!",
-        text: `Cześć ${firstName}!\n\nDziękujemy za zgłoszenie do Koła Naukowego Informatyków (KNI). Potwierdzamy otrzymanie Twoich danych.\n\nKtoś z naszego koła odezwie się do Ciebie w najbliższym czasie, aby poinformować o kolejnych krokach i terminach spotkań.\n\nDo zobaczenia!\nZespół KNI`,
+        text: `Cześć ${sanitizedData.firstName}!\n\nDziękujemy za zgłoszenie do Koła Naukowego Informatyków (KNI). Potwierdzamy otrzymanie Twoich danych.\n\nKtoś z naszego koła odezwie się do Ciebie w najbliższym czasie, aby poinformować o kolejnych krokach i terminach spotkań.\n\nDo zobaczenia!\nZespół KNI`,
         html: `
           <div style="font-family: sans-serif; line-height: 1.6; color: #333;">
-            <h2>Cześć ${firstName}!</h2>
+            <h2>Cześć ${sanitizedData.firstName}!</h2>
             <p>Dziękujemy za zgłoszenie do <strong>Koła Naukowego Informatyków (KNI)</strong>. Potwierdzamy otrzymanie Twoich danych.</p>
             <p>Ktoś z naszego koła odezwie się do Ciebie w najbliższym czasie, aby poinformować o kolejnych krokach i terminach spotkań.</p>
             <p>Do zobaczenia!<br><strong>Zespół KNI</strong></p>
@@ -102,3 +117,4 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Wystąpił błąd podczas przesyłania formularza." }, { status: 500 });
   }
 }
+
