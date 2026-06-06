@@ -8,9 +8,6 @@ function DiscordIcon({ className }: { className?: string }) {
     </svg>
   );
 }
-const karolImg = { src: "/members/karol_wronski.jpg" };
-const piotrImg = { src: "/members/piotr_wittig.png" };
-const aleksyImg = { src: "/members/aleksy_chojnowski.jpg" };
 
 const TEAM = [
   { name: "Oskar Desecki", role: "Opiekun koła", discord: "drakula7627", photo: "/members/oskar_desecki.png" },
@@ -21,10 +18,10 @@ const TEAM = [
     photo: "/members/bartosz_muczynski.png",
     position: "center 20%" 
   },
-  { name: "Karol Wroński", role: "Przewodniczący koła", discord: "kaj0x", photo: karolImg.src },
+  { name: "Karol Wroński", role: "Przewodniczący koła", discord: "kaj0x", photo: "/members/karol_wronski.jpg" },
   { name: "Paweł Dutkiewicz", role: "Zastępca przewodniczącego", discord: "_dudeq_", photo: "/members/pawel_dutkiewicz.png" },
-  { name: "Scarlet Dorożalska", role: "Zastępca przewodniczącego", discord: "scarletsun", photo: "/members/scarlet_dorozalska.png" },
-  { name: "Piotr Wittig", role: "Sekretarz · Owner PlanPM", discord: "schoji", photo: piotrImg.src },
+  { name: "Scarlet Dorożalska", role: "Zastępca przewodniczącego", discord: "scarletsun", photo: "/members/scarlet_dorozalska.jpg" },
+  { name: "Piotr Wittig", role: "Sekretarz · Owner PlanPM", discord: "schoji", photo: "/members/piotr_wittig.png" },
   { name: "Adrian Banaś", role: "Przewodniczący projektu VNS", discord: "adisman", photo: "/members/adrian_banas.png" },
   { name: "Aleksy Chojnowski", role: "Członek honorowy · Multitool Creative & Admin", discord: "zekqkeku", photo: "/members/kot.png" },
 ] as const;
