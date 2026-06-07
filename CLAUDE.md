@@ -14,6 +14,22 @@ npm run lint     # ESLint
 
 There are no tests. Always run `npm run build` to verify changes — it runs TypeScript checking and catches import errors.
 
+## Deployment
+
+Mac Mini M2, Jenkins CI, proxied through Cloudflare. Runs as a Node.js server (`next start`) inside Docker on port 8081.
+
+Jenkins builds a Docker image (see `Dockerfile`) and deploys it:
+```bash
+docker build --build-arg NEXT_PUBLIC_RECAPTCHA_SITE_KEY=... -t kni-web .
+docker run -d --name kni-web -p 8081:3000 --env-file /etc/kni-web/env kni-web
+```
+
+**Environment variables:**
+- Build-time (passed as `--build-arg`): `NEXT_PUBLIC_RECAPTCHA_SITE_KEY`
+- Runtime + build secrets: all in `~/.jenkins/containers/kni-web/.env` on the Mac Mini. Jenkins extracts `NEXT_PUBLIC_RECAPTCHA_SITE_KEY` as `--build-arg` at build time, and passes the whole file via `--env-file` at runtime.
+
+API routes work. Server Actions and middleware work.
+
 ## Stack & Key Constraints
 
 - **Next.js 16.2.7** (App Router) — this is a newer version than training data; read `node_modules/next/dist/docs/` if unsure about an API
