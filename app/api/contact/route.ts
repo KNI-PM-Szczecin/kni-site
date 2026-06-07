@@ -96,7 +96,7 @@ export async function POST(req: Request) {
     }
 
     // 2. Log to Google Sheets (via Google Apps Script Web App)
-    const scriptUrl = process.env.GOOGLE_SCRIPT_URL;
+    const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
     if (scriptUrl) {
       await fetch(scriptUrl, {
         method: "POST",
