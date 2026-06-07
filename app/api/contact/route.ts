@@ -1,17 +1,62 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
+const VALID_YEARS = ["1", "2", "3", "4", "5"];
+const VALID_MAJORS = new Set([
+  "Automatyka i robotyka",
+  "Geodezja i Kartografia",
+  "Geoinformatyka",
+  "Hydrografia",
+  "Informatyka",
+  "Inżynieria Modelowania Przestrzennego",
+  "Inżynieria przemysłowa i morskie elektrownie wiatrowe",
+  "Logistyka",
+  "Mechanika i Budowa Maszyn",
+  "Mechatronika",
+  "Nawigacja",
+  "Oceanotechnika",
+  "Oceanotechnika - Budowa Jachtów i Okrętów",
+  "Teleinformatyka",
+  "Transport",
+  "Zarządzanie",
+  "Zarządzanie i Inżynieria Produkcji",
+]);
+
 export async function POST(req: Request) {
   try {
-    const { 
-      firstName, 
-      lastName, 
-      yearOfStudy, 
-      major, 
-      email, 
-      albumNumber, 
-      recaptchaToken 
+    const {
+      firstName,
+      lastName,
+      yearOfStudy,
+      major,
+      email,
+      albumNumber,
+      recaptchaToken
     } = await req.json();
+
+    // Server-side field validation
+    const nameRegex = /^[^\d]{1,35}$/;
+    const emailRegex = /^[^\s@]+@[^\s@.][^\s@]*\.[^\s@]+$/;
+    const albumRegex = /^\d{1,5}$/;
+
+    if (!firstName || !nameRegex.test(String(firstName).trim())) {
+      return NextResponse.json({ error: "Nieprawidłowe imię." }, { status: 400 });
+    }
+    if (!lastName || !nameRegex.test(String(lastName).trim())) {
+      return NextResponse.json({ error: "Nieprawidłowe nazwisko." }, { status: 400 });
+    }
+    if (!email || !emailRegex.test(String(email).trim())) {
+      return NextResponse.json({ error: "Nieprawidłowy adres e-mail." }, { status: 400 });
+    }
+    if (!yearOfStudy || !VALID_YEARS.includes(String(yearOfStudy))) {
+      return NextResponse.json({ error: "Nieprawidłowy rok studiów." }, { status: 400 });
+    }
+    if (!major || !VALID_MAJORS.has(String(major))) {
+      return NextResponse.json({ error: "Nieprawidłowy kierunek." }, { status: 400 });
+    }
+    if (!albumNumber || !albumRegex.test(String(albumNumber))) {
+      return NextResponse.json({ error: "Numer albumu musi zawierać 1–5 cyfr." }, { status: 400 });
+    }
 
     // Helper to sanitize input against CSV/Excel injection
     const sanitizeSpreadsheetInput = (value: string | number | undefined) => {

@@ -26,7 +26,7 @@ export default function Footer() {
               Politechnika Morska w Szczecinie
             </div>
             <div className="text-[10px] text-gray-400 dark:text-gray-600 pt-2 uppercase tracking-widest font-bold">
-              © 2025 Wszystkie prawa zastrzeżone
+              © {new Date().getFullYear()} Wszystkie prawa zastrzeżone
             </div>
           </div>
         </div>
