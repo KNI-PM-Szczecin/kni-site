@@ -6,7 +6,6 @@ import { FadeUp } from "@/components/ui/motion";
 import { Button } from "@/components/ui/button";
 import { Loader2, CheckCircle2, AlertCircle } from "lucide-react";
 import { useTheme } from "next-themes";
-import emailjs from "@emailjs/browser";
 
 export default function ContactForm() {
   const { resolvedTheme } = useTheme();
@@ -56,48 +55,26 @@ export default function ContactForm() {
     }
 
     try {
-      const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
-      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          yearOfStudy: formData.yearOfStudy,
+          major: formData.major,
+          email: formData.email,
+          albumNumber: formData.albumNumber,
+          recaptchaToken: token,
+        }),
+      });
 
-      // Helper to sanitize input against CSV/Excel injection
-      const sanitizeSpreadsheetInput = (value: string | number | undefined) => {
-        if (value === undefined || value === null) return "";
-        const stringValue = String(value).trim();
-        if (/^[=+\-@\t\r]/.test(stringValue)) {
-          return `'${stringValue}`;
-        }
-        return stringValue;
-      };
+      const data = await res.json();
 
-      const sanitizedData = {
-        firstName: sanitizeSpreadsheetInput(formData.firstName),
-        lastName: sanitizeSpreadsheetInput(formData.lastName),
-        yearOfStudy: sanitizeSpreadsheetInput(formData.yearOfStudy),
-        major: sanitizeSpreadsheetInput(formData.major),
-        email: sanitizeSpreadsheetInput(formData.email),
-        albumNumber: sanitizeSpreadsheetInput(formData.albumNumber),
-      };
-
-      // 1. Save to Google Sheets (via existing Google Script)
-      if (scriptUrl) {
-        await fetch(scriptUrl, {
-          method: "POST",
-          mode: "no-cors",
-          headers: { "Content-Type": "text/plain" },
-          body: JSON.stringify({ ...sanitizedData, recaptchaToken: token }),
-        });
-      }
-
-      // 2. Send Confirmation Email via EmailJS (using SMTP Cloudmail)
-      if (serviceId && templateId && publicKey) {
-        await emailjs.send(
-          serviceId,
-          templateId,
-          sanitizedData,
-          publicKey
-        );
+      if (!res.ok) {
+        setStatus("error");
+        setErrorMessage(data.error || "Wystąpił błąd podczas wysyłania zgłoszenia.");
+        return;
       }
 
       setStatus("success");
