@@ -9,7 +9,7 @@ pipeline {
         stage('Build image') {
             steps {
                 sh """
-                    RECAPTCHA_SITE_KEY=\$(grep NEXT_PUBLIC_RECAPTCHA_SITE_KEY /Users/wiit1/.jenkins/containers/kni-web/.env | cut -d= -f2)
+                    RECAPTCHA_SITE_KEY=\$(grep NEXT_PUBLIC_RECAPTCHA_SITE_KEY /Users/wiit1/.jenkins/workspace/kni-web/.env | cut -d= -f2)
                     docker build \
                       --build-arg NEXT_PUBLIC_RECAPTCHA_SITE_KEY=\$RECAPTCHA_SITE_KEY \
                       -t kni-web .
@@ -26,7 +26,7 @@ pipeline {
                       --name kni-web \
                       --restart unless-stopped \
                       -p 8081:3000 \
-                      --env-file /Users/wiit1/.jenkins/containers/kni-web/.env \
+                      --env-file /Users/wiit1/.jenkins/workspace/kni-web/.env \
                       kni-web
                 """
             }

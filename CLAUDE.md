@@ -17,6 +17,7 @@ There are no tests. Always run `npm run build` to verify changes — it runs Typ
 ## Deployment
 
 Mac Mini M2, Jenkins CI, proxied through Cloudflare. Runs as a Node.js server (`next start`) inside Docker on port 8081.
+Jenkins user: `wiit1`. Workspace path: `/Users/wiit1/.jenkins/workspace/kni-web`.
 
 Jenkins builds a Docker image (see `Dockerfile`) and deploys it:
 ```bash
@@ -26,7 +27,7 @@ docker run -d --name kni-web -p 8081:3000 --env-file /etc/kni-web/env kni-web
 
 **Environment variables:**
 - Build-time (passed as `--build-arg`): `NEXT_PUBLIC_RECAPTCHA_SITE_KEY`
-- Runtime + build secrets: all in `~/.jenkins/containers/kni-web/.env` on the Mac Mini. Jenkins extracts `NEXT_PUBLIC_RECAPTCHA_SITE_KEY` as `--build-arg` at build time, and passes the whole file via `--env-file` at runtime.
+- Runtime + build secrets: all in `/Users/wiit1/.jenkins/workspace/kni-web/.env` on the Mac Mini. Jenkins extracts `NEXT_PUBLIC_RECAPTCHA_SITE_KEY` as `--build-arg` at build time, and passes the whole file via `--env-file` at runtime.
 
 API routes work. Server Actions and middleware work.
 
