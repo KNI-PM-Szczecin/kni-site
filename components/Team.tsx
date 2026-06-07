@@ -18,9 +18,9 @@ type TeamMember = {
 };
 
 const TEAM: TeamMember[] = [
-  { name: "Oskar Desecki", role: "Opiekun koła", discord: "drakula7627", photo: "/members/oskar_desecki.webp" },
+  { name: "mgr inż. Oskar Desecki", role: "Opiekun koła", discord: "drakula7627", photo: "/members/oskar_desecki.webp" },
   {
-    name: "Bartosz Muczyński",
+    name: "dr inż. of. wacht. Bartosz Muczyński",
     role: "VIP · Konsultant merytoryczny",
     discord: "muczak",
     photo: "/members/bartosz_muczynski.webp",
