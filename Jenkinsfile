@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        PATH = "/usr/local/bin:/opt/homebrew/bin:${env.PATH}"
+        PATH = "/Users/wiit1/.nvm/versions/node/v22.19.0/bin:/usr/local/bin:/opt/homebrew/bin:${env.PATH}"
     }
 
     stages {
