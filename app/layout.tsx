@@ -41,7 +41,7 @@ export const metadata: Metadata = {
       "Budujemy projekty, organizujemy hackathony i rozwijamy pasje studentów informatyki na Politechnice Morskiej w Szczecinie.",
     images: [
       {
-        url: "/logo/kni_color_pl_1024.png",
+        url: "/logo/kni_black_pl_1024.png",
         width: 1024,
         height: 1024,
         alt: "Logo KNI Politechnika Morska Szczecin",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     title: "KNI — Koło Naukowe Informatyki",
     description:
       "Budujemy projekty, organizujemy hackathony i rozwijamy pasje studentów informatyki na Politechnice Morskiej w Szczecinie.",
-    images: ["/logo/kni_color_pl_1024.png"],
+    images: ["/logo/kni_black_pl_1024.png"],
   },
   robots: {
     index: true,
