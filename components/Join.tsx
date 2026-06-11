@@ -67,7 +67,7 @@ export default function Join() {
               <div className="flex items-center gap-4 mb-7">
                 <div className="relative w-14 h-14 rounded-full overflow-hidden flex-shrink-0 bg-gray-100 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
                   <Image
-                    src="/members/oskar_desecki.webp"
+                    src="/members/oskar_desecki.png"
                     alt="Oskar Desecki"
                     fill
                     className="object-cover"
