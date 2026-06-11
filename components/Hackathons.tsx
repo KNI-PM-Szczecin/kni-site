@@ -47,9 +47,20 @@ export default function Hackathons() {
             <p className="text-gray-500 dark:text-gray-400 leading-relaxed mb-4">
               Hackathony to jeden z naszych ulubionych sposobów na naukę i integrację — kilkanaście godzin kodowania, pomysłów i kawy razem z innymi pasjonatami z całej Polski.
             </p>
-            <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
+            <p className="text-gray-500 dark:text-gray-400 leading-relaxed mb-8">
               Jeśli chcesz pojeździć razem z nami, dołącz do koła i bądź na bieżąco z naszymi planami na Discordzie.
             </p>
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="/hackathon"
+                className="inline-flex items-center px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold transition-all hover:shadow-lg hover:shadow-blue-500/25 group"
+              >
+                Zobacz wszystkie wyjazdy
+                <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
           </FadeUp>
 
         </div>
