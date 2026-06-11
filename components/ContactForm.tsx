@@ -35,7 +35,7 @@ export default function ContactForm() {
       return;
     }
     if (name === "firstName" || name === "lastName") {
-      setFormData((prev) => ({ ...prev, [name]: value.replace(/[0-9]/g, "") }));
+      setFormData((prev) => ({ ...prev, [name]: value.replace(/[^a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ\s\-]/g, "") }));
       return;
     }
     const val = type === "checkbox" ? (e.target as HTMLInputElement).checked : value;

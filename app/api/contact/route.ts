@@ -35,7 +35,7 @@ export async function POST(req: Request) {
     } = await req.json();
 
     // Server-side field validation
-    const nameRegex = /^[^\d]{1,35}$/;
+    const nameRegex = /^[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ\s\-]{1,35}$/;
     const emailRegex = /^[^\s@]+@[^\s@.][^\s@]*\.[^\s@]+$/;
     const albumRegex = /^\d{1,5}$/;
 
