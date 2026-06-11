@@ -27,7 +27,7 @@ const TEAM: TeamMember[] = [
     position: "center 20%"
   },
   { name: "Karol Wroński", role: "Przewodniczący koła", discord: "kaj0x", photo: "/members/karol_wronski.webp" },
-  { name: "Paweł Dutkiewicz", role: "Zastępca przewodniczącego", discord: "_dudeq_", photo: "/members/pawel_dutkiewicz.webp" },
+  { name: "Paweł Dutkiewicz", role: "Zastępca przewodniczącego", discord: "_dudeq_", photo: "/members/pawel_dutkiewicz.jpg" },
   { name: "Scarlet Dorożalska", role: "Zastępca przewodniczącego", discord: "scarletsun", photo: "/members/scarlet_dorozalska.webp" },
   { name: "Piotr Wittig", role: "Sekretarz · Owner PlanPM", discord: "schoji", photo: "/members/piotr_wittig.webp" },
   { name: "Adrian Banaś", role: "Przewodniczący projektu VNS", discord: "adisman", photo: "/members/adrian_banas.webp" },
