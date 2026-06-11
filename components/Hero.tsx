@@ -13,9 +13,9 @@ const PHOTOS = [
 ];
 
 const STATS = [
-  { value: "40+", label: "aktywnych członków" },
-  { value: "15+", label: "zrealizowanych projektów" },
-  { value: "8", label: "lat działalności" },
+  { value: "30+", label: "aktywnych członków" },
+  { value: "2|7", label: "zrealizowanych projektów" },
+  { value: "2", label: "lat działalności" },
 ];
 
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
