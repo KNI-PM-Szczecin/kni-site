@@ -6,6 +6,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
+import HackathonGallery from "@/components/HackathonGallery";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -35,8 +36,11 @@ export default async function HackathonDetailPage({ params }: Props) {
             src={hackathon.image}
             alt={hackathon.title}
             fill
+            sizes="100vw"
             className="object-cover"
+            style={{ objectPosition: hackathon.imagePosition ?? "center" }}
             priority
+            loading="eager"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-8 sm:p-12 lg:p-16">
@@ -99,6 +103,7 @@ export default async function HackathonDetailPage({ params }: Props) {
                                   src={post.image}
                                   alt={post.title}
                                   fill
+                                  sizes="(max-width: 1024px) 100vw, 66vw"
                                   className="object-cover"
                                 />
                               </div>
@@ -120,6 +125,38 @@ export default async function HackathonDetailPage({ params }: Props) {
                     </div>
                   </div>
                 )}
+                {/* Video Section */}
+                {hackathon.video && (
+                  <FadeUp>
+                    <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">{hackathon.video.title ?? "Nagranie z otwarcia"}</h2>
+                    <div className="rounded-2xl overflow-hidden bg-black aspect-video mb-3">
+                      <video
+                        controls
+                        preload="metadata"
+                        className="w-full h-full"
+                        aria-label={hackathon.video.caption}
+                      >
+                        <source src={hackathon.video.src} type="video/mp4" />
+                        Twoja przeglądarka nie obsługuje odtwarzania wideo.
+                      </video>
+                    </div>
+                    <p className="text-sm text-gray-500 dark:text-gray-400 italic">
+                      {hackathon.video.caption}
+                    </p>
+                  </FadeUp>
+                )}
+
+                {/* Gallery Section */}
+                {hackathon.gallery && hackathon.gallery.length > 0 && (
+                  <FadeUp>
+                    <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">Galeria zdjęć</h2>
+                    <p className="text-sm text-gray-500 dark:text-gray-400 mb-5">
+                      Kliknij zdjęcie, aby je powiększyć. Nawigacja strzałkami klawiatury.
+                    </p>
+                    <HackathonGallery photos={hackathon.gallery} />
+                  </FadeUp>
+                )}
+
               </div>
 
               {/* Sidebar */}

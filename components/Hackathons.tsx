@@ -5,11 +5,11 @@ import { FadeUp } from "@/components/ui/motion";
 import AutoCarousel from "@/components/AutoCarousel";
 
 const SLIDES = [
-  { src: "/hackathons/1759862212517.webp", alt: "Hackathon" },
-  { src: "/hackathons/1759862213721.webp", alt: "Hackathon" },
-  { src: "/hackathons/1759862217008.webp", alt: "Hackathon" },
-  { src: "/hackathons/1763587942958.webp", alt: "Hackathon" },
-  { src: "/hackathons/1765574231626.webp", alt: "Hackathon" },
+  { src: "/hackathons/hackyeah/1759862212517.webp", alt: "Hackathon" },
+  { src: "/hackathons/hackyeah/1759862213721.webp", alt: "Hackathon" },
+  { src: "/hackathons/hackyeah/1759862217008.webp", alt: "Hackathon" },
+  { src: "/hackathons/cybermil/1763587942958.webp", alt: "Hackathon" },
+  { src: "/hackathons/hacknation2025/1765574231626.webp", alt: "Hackathon" },
   { src: "/hackathons/piter.webp", alt: "Hackathon - integracja", objectPosition: "top" },
 ];
 
@@ -50,17 +50,15 @@ export default function Hackathons() {
             <p className="text-gray-500 dark:text-gray-400 leading-relaxed mb-8">
               Jeśli chcesz pojeździć razem z nami, dołącz do koła i bądź na bieżąco z naszymi planami na Discordzie.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="/hackathon"
-                className="inline-flex items-center px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold transition-all hover:shadow-lg hover:shadow-blue-500/25 group"
-              >
-                Zobacz wszystkie wyjazdy
-                <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="9 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
+            <a
+              href="/hackathon"
+              className="group inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-700"
+            >
+              Zobacz wszystkie wyjazdy
+              <svg className="h-4 w-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
           </FadeUp>
 
         </div>
