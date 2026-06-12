@@ -23,7 +23,7 @@ const TEAM: TeamMember[] = [
     name: "dr inż. of. wacht. Bartosz Muczyński",
     role: "VIP · Konsultant merytoryczny",
     discord: "muczak",
-    photo: "/members/bartosz_muczynski.webp",
+    photo: "/members/bartosz_muczynski.jpg",
     position: "center 20%"
   },
   { name: "Karol Wroński", role: "Przewodniczący koła", discord: "kaj0x", photo: "/members/karol_wronski.webp" },
