@@ -6,14 +6,6 @@ import { HACKATHONS } from "@/lib/hackathons";
 import { FadeUp } from "@/components/ui/motion";
 import Image from "next/image";
 import Link from "next/link";
-import { Badge } from "@/components/ui/badge";
-
-const STATUS_VARIANTS = {
-  nadchodzący: "default",
-  "w toku": "secondary",
-  zakończony: "outline",
-} as const;
-
 export default function HackathonPage() {
   return (
     <>
@@ -35,30 +27,27 @@ export default function HackathonPage() {
             </div>
           </FadeUp>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
             {HACKATHONS.map((hackathon, index) => (
-              <FadeUp key={hackathon.slug} delay={index * 0.1}>
-                <Link href={`/hackathon/${hackathon.slug}`} className="group block">
+              <FadeUp key={hackathon.slug} delay={index * 0.1} className="h-full">
+                <Link href={`/hackathon/${hackathon.slug}`} className="group block h-full">
                   <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl overflow-hidden hover:border-blue-500/50 transition-all hover:shadow-xl hover:shadow-blue-500/10 h-full flex flex-col">
                     <div className="relative aspect-[16/9] overflow-hidden">
                       <Image
                         src={hackathon.image}
                         alt={hackathon.title}
                         fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        style={{ objectPosition: hackathon.imagePosition ?? "center" }}
                       />
-                      <div className="absolute top-4 left-4">
-                        <Badge variant={STATUS_VARIANTS[hackathon.status]}>
-                          {hackathon.status}
-                        </Badge>
-                      </div>
                     </div>
-                    
+
                     <div className="p-6 flex flex-col flex-1">
-                      <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-3">
-                        <span>{hackathon.date}</span>
-                        <span>•</span>
-                        <span>{hackathon.location}</span>
+                      <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-3 min-w-0">
+                        <span className="shrink-0">{hackathon.date}</span>
+                        <span className="shrink-0">•</span>
+                        <span className="truncate">{hackathon.location}</span>
                       </div>
                       
                       <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">

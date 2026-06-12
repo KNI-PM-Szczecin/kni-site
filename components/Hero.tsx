@@ -105,7 +105,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.3, ease: EASE }}
         >
-          <Image src={PHOTOS[0].src} alt={PHOTOS[0].alt} fill className="object-cover" priority sizes="100vw" />
+          <Image src={PHOTOS[0].src} alt={PHOTOS[0].alt} fill className="object-cover" priority sizes="(max-width: 640px) 100vw, 90vw" />
         </motion.div>
       </div>
 
