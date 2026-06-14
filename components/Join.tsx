@@ -70,6 +70,7 @@ export default function Join() {
                     src="/members/oskar_desecki.png"
                     alt="Oskar Desecki"
                     fill
+                    sizes="56px"
                     className="object-cover"
                   />
                 </div>

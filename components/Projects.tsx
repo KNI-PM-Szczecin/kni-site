@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { FadeUp } from "@/components/ui/motion";
 const planpmImg = { src: "/projects/plan_pm.webp" };
@@ -10,6 +11,7 @@ const rpsImg = { src: "/projects/rock_paper_scissors.webp" };
 const fryderykImg = { src: "/projects/fryderyk.webp" };
 const vnsImg = { src: "/projects/vns.webp" };
 const navigatorImg = { src: "/projects/navigator_pm.webp" };
+const aleksyImg = { src: "/projects/aleksy/front.webp" };
 
 const PROJECTS = [
   {
@@ -21,6 +23,16 @@ const PROJECTS = [
     members: 6,
     image: planpmImg.src,
     github: "https://github.com/KNI-PM-Szczecin/plan_pm",
+  },
+  {
+    category: "Hardware / AI",
+    status: "Zakończony" as const,
+    title: "ALEKSY",
+    description:
+      "W pełni offline'owy polski asystent głosowy — wake word, STT, LLM i TTS działają lokalnie na Jetson Xavier NX w customowej obudowie drukowanej 3D.",
+    members: 0,
+    image: aleksyImg.src,
+    slug: "aleksy",
   },
   {
     category: "Game Dev",
@@ -187,14 +199,23 @@ export default function Projects() {
                   <span className="text-xs text-gray-400 dark:text-gray-500">
                     {project.members > 0 ? `${project.members} członków` : ""}
                   </span>
-                  <a
-                    href={"github" in project ? project.github : "#"}
-                    target={"github" in project ? "_blank" : undefined}
-                    rel={"github" in project ? "noopener noreferrer" : undefined}
-                    className="text-xs font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors inline-flex items-center gap-0.5"
-                  >
-                    Dowiedz się więcej →
-                  </a>
+                  {"slug" in project ? (
+                    <Link
+                      href={`/project/${project.slug}`}
+                      className="text-xs font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors inline-flex items-center gap-0.5"
+                    >
+                      Dowiedz się więcej →
+                    </Link>
+                  ) : "github" in project ? (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors inline-flex items-center gap-0.5"
+                    >
+                      Dowiedz się więcej →
+                    </a>
+                  ) : null}
                 </div>
               </div>
             </motion.article>
