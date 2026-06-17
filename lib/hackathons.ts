@@ -11,6 +11,8 @@ export interface HackathonPost {
   title: string;
   content: string;
   image?: string;
+  URL: string;
+  label: string;
 }
 
 export interface HackathonVideo {
@@ -172,19 +174,19 @@ _Editor's note (Piotr Wittig): nie spałem wtedy 36 godzin._`,
     image: "/hackathons/cybermil/hack_cybermil.jpg",
     imagePosition: "center 25%",
     date: "2026-06-05",
-    location: "Warszawa,INSECON",
+    location: "Warszawa,INSECON(Poznań)",
     status: "zakończony",
     milestones: [
       {
         date: "2025-12-20",
-        title: "Etap I: ",
+        title: "Etap 0 ",
         description: "Kursy Online, mające na celu przygotowanie uczestników do eliminacji w ramach Akademii Cybermil.",
         completed: true,
       },
       {
         date: "2026-05-03",
         title: "Etap I",
-        description: "Publikacja listy zespołów zakwalifikowanych do finału w Warszawie.",
+        description: "CTF w Poznaniu, po którym nastąpiła publikacja listy zespołów zakwalifikowanych do finału w Warszawie.",
         completed: true,
       },
       {
@@ -206,7 +208,10 @@ _Editor's note (Piotr Wittig): nie spałem wtedy 36 godzin._`,
         date: "2026-06-05",
         title: "Niesamowite doświadczenie na INSECON",
         content: "Bycie częścią Cybermil 2026 to nie tylko kodowanie, ale też możliwość uczestnictwa w panelach konferencji INSECON. Wiedza zdobyta od ekspertów z całego świata jest bezcenna.",
+        URL: "https://www.cyber.mil.pl/articles/aktualnosci-y/2026-05-07u-fina-projektu-akademia-cyber_mil/",
+        label: "Kliknij by zobaczyc szczegoly"
       },
+      
     ],
   },
 ];

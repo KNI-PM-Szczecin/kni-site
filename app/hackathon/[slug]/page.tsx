@@ -115,9 +115,27 @@ export default async function HackathonDetailPage({ params }: Props) {
                               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                                 {post.title}
                               </h3>
-                              <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-lg">
+                              <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-lg mb-6">
                                 {post.content}
                               </p>
+                              {post.URL && (
+                                <Link 
+                                  href={post.URL}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center text-blue-600 dark:text-blue-400 font-semibold hover:text-blue-700 dark:hover:text-blue-300 transition-colors group"
+                                >
+                                  {post.label || "Dowiedz się więcej"}
+                                  <svg 
+                                    className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" 
+                                    fill="none" 
+                                    viewBox="0 0 24 24" 
+                                    stroke="currentColor"
+                                  >
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7-7 7M5 12h16" />
+                                  </svg>
+                                </Link>
+                              )}
                             </div>
                           </article>
                         </FadeUp>
