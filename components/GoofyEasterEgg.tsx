@@ -5,14 +5,14 @@ import Image from "next/image";
 
 const GOOFY_PHOTOS = [
   { src: "/hackathons/goofy_hackathon/full_send.jpg", caption: "Full send. Commitujemy prosto na main." },
-  { src: "/hackathons/goofy_hackathon/hard_work.jpg", caption: "Prawdziwy MVP hackathonu: koc z Pikachu." },
-  { src: "/hackathons/goofy_hackathon/npc_face.jpg", caption: "NPC dialogue: „Nie mam nic więcej do powiedzenia”." },
+  { src: "/hackathons/goofy_hackathon/hard_work.jpg", caption: "Prawdziwy MVP hackathonu Teamwork: Jeden śpi, drugi pracuje  ." },
+  { src: "/hackathons/goofy_hackathon/npc_face.jpg", caption: "NPC face: „Czy te oczy mogą kłamać?”." },
   { src: "/hackathons/goofy_hackathon/pointer.jpg", caption: "Kurs wytyczony. Ląd (i finał) w zasięgu wzroku." },
-  { src: "/hackathons/goofy_hackathon/stare_excercise.jpg", caption: "Precyzja jak przy pisaniu regexa." },
-  { src: "/hackathons/goofy_hackathon/focus.jpg", caption: "Skupienie jak przy code review o 4 nad ranem." },
-  { src: "/hackathons/goofy_hackathon/laugh.jpg", caption: "Śmiech to najlepszy debugger." },
-  { src: "/hackathons/goofy_hackathon/food.jpg", caption: "Budżet na catering: nieograniczony. Wykorzystanie: również." },
-  { src: "/hackathons/goofy_hackathon/more_food.jpg", caption: "Drugie śniadanie ważniejsze niż daily standup." },
+  { src: "/hackathons/goofy_hackathon/stare_excercise.jpg", caption: "Precyzja jak przy pisaniu regexa o 3 w nocy." },
+  { src: "/hackathons/goofy_hackathon/focus.jpg", caption: "Skupienie jak przy 3 minutowym o 4 nad ranem." },
+  { src: "/hackathons/goofy_hackathon/laugh.jpg", caption: "Śmiech to zdrowie." },
+  { src: "/hackathons/goofy_hackathon/food.jpg", caption: "Budżet na catering: nieograniczony. Wykorzystanie: również. " },
+  { src: "/hackathons/goofy_hackathon/more_food.jpg", caption: "Darmo to uczciwa cena." },
 ];
 
 export default function GoofyEasterEgg() {
