@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { FadeUp } from "@/components/ui/motion";
 import AutoCarousel from "@/components/AutoCarousel";
+import HiddenAnchor from "@/components/HiddenAnchor";
 
 const SLIDES = [
   { src: "/hackathons/hackyeah/1759862212517.webp", alt: "Hackathon" },
@@ -39,7 +40,8 @@ export default function Hackathons() {
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white leading-tight mb-5">
               {currentIndex === 5 ? (
                 <>
-                  Jeździmy. <span className="text-red-600">Jest silnie...</span>
+                  Jeździmy. <span className="text-red-600">Jest silnie...</span>{" "}
+                  <HiddenAnchor className="text-3xl sm:text-4xl align-middle" />
                 </>
               ) : (
                 "Jeździmy. Jest fajnie."

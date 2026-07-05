@@ -26,7 +26,7 @@ const TEAM: TeamMember[] = [
     photo: "/members/bartosz_muczynski.jpg",
     position: "center 20%"
   },
-  { name: "Karol Wroński", role: "Przewodniczący koła", discord: "kaj0x", photo: "/members/karol_wronski.webp" },
+  { name: "Karol Wroński", role: "Przewodniczący koła", discord: "kaj0x", photo: "/members/karol.jpg" },
   { name: "Paweł Dutkiewicz", role: "Zastępca przewodniczącego", discord: "_dudeq_", photo: "/members/pawel_dutkiewicz.jpg" },
   { name: "Scarlet Dorożalska", role: "Zastępca przewodniczącego", discord: "scarletsun", photo: "/members/scarlet_dorozalska.webp" },
   { name: "Piotr Wittig", role: "Sekretarz · Owner PlanPM", discord: "schoji", photo: "/members/piotr_wittig.webp" },
