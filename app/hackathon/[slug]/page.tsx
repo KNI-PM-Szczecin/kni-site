@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import HackathonGallery from "@/components/HackathonGallery";
+import GoofyEasterEgg from "@/components/GoofyEasterEgg";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -84,6 +85,7 @@ export default async function HackathonDetailPage({ params }: Props) {
                   <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">O wydarzeniu</h2>
                   <div className="prose dark:prose-invert max-w-none text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
                     {hackathon.fullDescription}
+                    {hackathon.slug === "hackathon-morski-2026" && <GoofyEasterEgg />}
                   </div>
                 </FadeUp>
 
