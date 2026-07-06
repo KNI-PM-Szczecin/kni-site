@@ -13,6 +13,11 @@ const GOOFY_PHOTOS = [
   { src: "/hackathons/goofy_hackathon/laugh.jpg", caption: "Śmiech to zdrowie." },
   { src: "/hackathons/goofy_hackathon/food.jpg", caption: "Budżet na catering: nieograniczony. Wykorzystanie: również. " },
   { src: "/hackathons/goofy_hackathon/more_food.jpg", caption: "Darmo to uczciwa cena." },
+  {src:  "/hackathons/goofy_hackathon/stalking.jpg", caption: "Karol i mistrzowie drugigo planu"},
+  {src: "/hackathons/goofy_hackathon/proof.jpg", caption: "Dowód na to,że niektórzy przeżyją bunt Ai"},
+  {src: "/hackathons/goofy_hackathon/spanko.jpg", caption: "Nie moge mam spanko x 3 ." },
+  {src: "/hackathons/goofy_hackathon/lodowa.jpg", caption: "Ah ta inżynieria" },
+  {src: "/hackathons/goofy_hackathon/macgayver.jpg", caption: "MacGyverzy w akcji." },
 ];
 
 export default function GoofyEasterEgg() {
