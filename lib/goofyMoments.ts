@@ -24,6 +24,8 @@ export const GOOFY_MOMENTS: GoofyMoment[] = [
       {src: "/hackathons/goofy_hackathon/stalking.jpg", caption: "Karol i mistrzowie drugiego planu." },
       {src: "/hackathons/goofy_hackathon/proof.jpg", caption: "Dowód na to, że niektórzy przeżyją bunt AI." },
       {src: "/hackathons/goofy_hackathon/spanko.jpg", caption: "Nie moge mam spanko x 3 ." },
+      {src: "/hackathons/goofy_hackathon/lodowa.jpg", caption: "Ah ta inżynieria" },
+      {src: "/hackathons/goofy_hackathon/macgayver.jpg", caption: "MacGyverzy w akcji." },
     ],
   },
 ];
