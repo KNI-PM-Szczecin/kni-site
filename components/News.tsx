@@ -27,7 +27,7 @@ export default function News() {
             <span className="hidden sm:inline text-blue-200 dark:text-blue-800">|</span>
 
             <a
-              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1"
               target="_blank"
               rel="noopener noreferrer"
               className="group text-sm text-gray-700 dark:text-gray-300 leading-snug hover:text-gray-900 dark:hover:text-white transition-colors sm:ml-auto"
