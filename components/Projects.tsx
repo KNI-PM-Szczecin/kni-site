@@ -47,6 +47,15 @@ const PROJECTS = [
   },
   {
     category: "Game Dev",
+    status: "Zakończony" as const,
+    title: "Shipyard Surfers",
+    description:
+      "Gra w stylu Subway Surfers sterowana gestami przed kamerą — model YOLO Pose rozpoznaje ruchy rąk gracza. Przygotowana na II Piknik Naukowy MCN.",
+    members: 0,
+    slug: "shipyard-surfers",
+  },
+  {
+    category: "Game Dev",
     status: "W toku" as const,
     title: "VNS",
     description:
