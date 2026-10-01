@@ -82,6 +82,63 @@ Największym wyzwaniem była latencja. Whisper na CPU potrzebuje 5–8 sekund na
     challenge:
       "Whisper na CPU transkrybuje 2-sekundową wypowiedź w 5–8 sekund. Jetson Xavier NX to starzejące się hardware'owe rozwiązanie — działamy na granicy jego możliwości. Mimo to v1 działa.",
     future:
-      "Wersja v2 planowana na Raspberry Pi 5 z cloud-connected STT i LLM — czas odpowiedzi ma spaść do ułamku sekundy.",
+      "Wersja v2 przeniosła się na Raspberry Pi 5 ze zdalnym serwerem do STT, LLM i TTS — zobacz projekt ALEKSY v2.",
+  },
+  {
+    slug: "aleksy-v2",
+    title: "ALEKSY v2",
+    acronym: "Autonomous Local Encrypted Knowledge System Yield",
+    description:
+      "Polski asystent głosowy na Raspberry Pi 5 z buźką na OLED-zie — mówi sklonowanym głosem prawdziwego Aleksego, a ciężkie modele działają na zdalnym Macu mini.",
+    fullDescription: `ALEKSY v2 to asystent głosowy zbudowany na stanowisko KNI podczas dni adaptacyjnych na Politechnice Morskiej w Szczecinie. Mówisz „Aleksy", zadajesz pytanie, a on odpowiada na głos sklonowanym głosem prawdziwego Aleksego — kolegi, od którego projekt wziął nazwę. Mały ekran OLED pokazuje buźkę zależną od tego, co akurat robi.
+
+Pierwsza wersja działała w całości offline na NVIDIA Jetson Xavier NX z lokalnym LLM-em. W praktyce odpowiedź zajmowała 20–30 sekund, model ledwo prowadził rozmowę, mikrofon krawatowy był na baterie, a domowej roboty wzmacniacz zbierał zakłócenia z płytki. Wersja druga dzieli pracę na dwie części: Raspberry Pi 5 robi tylko to, co musi się dziać w sali — wake word, nagrywanie, odtwarzanie i buźkę. Wszystko, co ciężkie, dzieje się na Macu mini M2 przez sieć.
+
+Pipeline: Pi nasłuchuje słowa aktywującego i odpowiada „tak". Detekcja aktywności głosowej decyduje, kiedy skończyłeś mówić, a Pi gra krótki wypełniacz („chwileczkę", „momencik"), żeby zamaskować czekanie. Nagranie leci do serwera przez WebSocket, serwer je transkrybuje, wysyła do LLM-a razem z kilkoma ostatnimi turami rozmowy i syntezuje odpowiedź głosem Aleksego. Audio wraca do Pi razem z transkrypcją, odpowiedzią i czasem każdego etapu.
+
+Prompt systemowy każe mu być gospodarzem stanowiska koła: odpowiada w dwóch–czterech zdaniach, poleca jeden z projektów KNI pasujący do rozmowy i zapisuje liczby, daty i godziny słownie, żeby TTS przeczytał je poprawnie. Na Pi działa też mały panel webowy z podglądem buźki na żywo, historią rozmów z czasami etapów i logami — tam też wybiera się sieć Wi-Fi albo głośnik Bluetooth. Klient deployuje się sam: Jenkins na Pi co minutę sprawdza repozytorium, synchronizuje kod i restartuje usługę systemd.`,
+    category: "Hardware / AI",
+    status: "Zakończony",
+    heroImage: "/projects/aleksy-v2/aleksy.webp",
+    cardImage: "/projects/aleksy-v2/aleksy.webp",
+    techStack: [
+      { name: "Python", role: "Klient i serwer" },
+      { name: "Raspberry Pi 5", role: "Urządzenie: wake word, audio, OLED" },
+      { name: "Mac mini M2", role: "Serwer z modelami (MLX)" },
+      { name: "microWakeWord", role: "Detekcja słowa „Aleksy”" },
+      { name: "microVAD", role: "Detekcja aktywności głosowej" },
+      { name: "Qwen3-ASR 0.6B", role: "Speech-to-Text (MLX, 8-bit)" },
+      { name: "OpenAI API", role: "LLM (GPT-6 Luna), fallback na lokalny Qwen3-8B" },
+      { name: "OmniVoice", role: "TTS z klonowaniem głosu (MLX)" },
+      { name: "WebSockets", role: "Komunikacja Pi ↔ serwer" },
+      { name: "Flask", role: "Panel webowy na Pi" },
+      { name: "Jenkins", role: "Automatyczny deploy na Pi" },
+    ],
+    highlights: [
+      "Odpowiada sklonowanym głosem prawdziwego Aleksego",
+      "Buźka na OLED-zie — maszyna stanów: idle, słucha, myśli, mówi, śpi, błąd",
+      "Wypełniacze („chwileczkę”) maskują czas odpowiedzi",
+      "Własny hotspot Wi-Fi, gdy nie ma znanej sieci",
+      "Głośnik Bluetooth wybierany z panelu webowego",
+      "Obudowa drukowana w 3D",
+    ],
+    gallery: [
+      "/projects/aleksy-v2/aleksy.webp",
+      "/projects/aleksy-v2/oled-face.webp",
+      "/projects/aleksy-v2/case.webp",
+      "/projects/aleksy-v2/wm8960-hat.webp",
+      "/projects/aleksy-v2/speaker.webp",
+    ],
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/Schoji/voice-assistant-v2",
+        icon: "github",
+      },
+    ],
+    challenge:
+      "Na evencie zawiodła nie AI, tylko sala: głośniki były za ciche na halę pełną stanowisk, a bez internetu Aleksy nie mógł połączyć się z serwerem. Do tego Mac mini M2 okazał się wolny — TTS chodzi na 16 krokach dyfuzji zamiast 32, a odpowiedzi są ucięte do 300 znaków.",
+    future:
+      "Po evencie doszedł głośnik Bluetooth wybierany z panelu i własny hotspot do konfiguracji Wi-Fi, a obudowa została przedrukowana z lepszego filamentu. Urządzenie jest gotowe na kolejne wydarzenia koła.",
   },
 ];

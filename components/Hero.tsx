@@ -14,7 +14,7 @@ const PHOTOS = [
 
 const STATS = [
   { value: "30+", label: "aktywnych członków" },
-  { value: "2|7", label: "zrealizowanych projektów" },
+  { value: "4", label: "zrealizowanych projektów" },
   { value: "2", label: "lat działalności" },
 ];
 

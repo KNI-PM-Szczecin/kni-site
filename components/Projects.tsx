@@ -10,8 +10,9 @@ const airdronImg = { src: "/projects/airdrone_pm.webp" };
 const rpsImg = { src: "/projects/rock_paper_scissors.webp" };
 const fryderykImg = { src: "/projects/fryderyk.webp" };
 const vnsImg = { src: "/projects/vns.webp" };
-const navigatorImg = { src: "/projects/navigator_pm.webp" };
+const navigatorImg = { src: "/projects/navigator_pm_map.webp" };
 const aleksyImg = { src: "/projects/aleksy/front.webp" };
+const aleksyV2Img = { src: "/projects/aleksy-v2/aleksy.webp" };
 
 const PROJECTS = [
   {
@@ -23,6 +24,16 @@ const PROJECTS = [
     members: 6,
     image: planpmImg.src,
     github: "https://github.com/KNI-PM-Szczecin/plan_pm",
+  },
+  {
+    category: "Hardware / AI",
+    status: "Zakończony" as const,
+    title: "ALEKSY v2",
+    description:
+      "Polski asystent głosowy na Raspberry Pi 5 z buźką na OLED-zie — mówi sklonowanym głosem prawdziwego Aleksego, a STT, LLM i TTS działają na zdalnym Macu mini.",
+    members: 0,
+    image: aleksyV2Img.src,
+    slug: "aleksy-v2",
   },
   {
     category: "Hardware / AI",
