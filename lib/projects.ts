@@ -141,4 +141,44 @@ Prompt systemowy każe mu być gospodarzem stanowiska koła: odpowiada w dwóch�
     future:
       "Po evencie doszedł głośnik Bluetooth wybierany z panelu i własny hotspot do konfiguracji Wi-Fi, a obudowa została przedrukowana z lepszego filamentu. Urządzenie jest gotowe na kolejne wydarzenia koła.",
   },
+  {
+    slug: "shipyard-surfers",
+    title: "Shipyard Surfers",
+    description:
+      "Gra w stylu Subway Surfers sterowana gestami przed kamerą — model YOLO Pose śledzi ręce gracza, a Ty pływasz łodzią między przeszkodami w stoczni.",
+    fullDescription: `Shipyard Surfers to endless runner w klimacie portu i stoczni, przygotowany przez KNI na II Piknik Naukowy Morskiego Centrum Nauki. Zamiast klawiatury czy ekranu dotykowego gra się gestami: stajesz przed kamerą, a gra śledzi Twoją sylwetkę w czasie rzeczywistym.
+
+Płyniesz łodzią po trzech torach, omijasz przeszkody z zestawów portowego i pirackiego, zbierasz monety i power-upy: magnes na monety, super skok i podwójne punkty. Machnięcie ręką w bok zmienia tor, uniesienie obu rąk to skok, a szybkie opuszczenie obu rąk to wślizg pod przeszkodą. Trasa jest generowana proceduralnie z segmentów, więc każda runda wygląda inaczej.
+
+Sterowanie ruchem działa w całości lokalnie. Obraz z kamery trafia do modelu YOLO Pose wyeksportowanego do ONNX i uruchamianego przez Unity Inference Engine. Gra przy starcie mierzy opóźnienia i sama wybiera szybszy backend (GPU lub CPU). Punkty kluczowe sylwetki są wygładzane filtrem One Euro i normalizowane względem pozycji neutralnej, a osobne reguły rozpoznają każdy gest. Przed grą krótka kalibracja dopasowuje progi do gracza.
+
+Na stoisku gra wystawia też lokalny serwer WWW z tablicą wyników i podglądem z kamery, aktualizowanymi na żywo przez WebSocket.`,
+    category: "Game Dev",
+    status: "Zakończony",
+    cardImage: "/projects/shipyard_surfers.webp",
+    techStack: [
+      { name: "Unity 6", role: "Silnik gry (URP)" },
+      { name: "C#", role: "Logika gry i sterowania" },
+      { name: "YOLO Pose", role: "Wykrywanie sylwetki gracza z kamery" },
+      { name: "Unity Inference Engine", role: "Uruchamianie modelu ONNX w grze" },
+      { name: "Python", role: "Eksport modelu do ONNX, generowanie sprite'ów" },
+      { name: "WebSockets", role: "Tablica wyników i podgląd kamery na żywo" },
+      { name: "Kenney Assets", role: "Modele 3D portu, statków i fabryki" },
+    ],
+    highlights: [
+      "Sterowanie gestami przez zwykłą kamerę",
+      "Rozpoznawanie gestów: zmiana toru, skok, wślizg",
+      "Kalibracja pod konkretnego gracza",
+      "Automatyczny wybór backendu GPU / CPU",
+      "Proceduralnie generowana trasa i power-upy",
+      "Tablica wyników na żywo w przeglądarce",
+    ],
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/KNI-PM-Szczecin/ShipyardSurfers",
+        icon: "github",
+      },
+    ],
+  },
 ];
