@@ -13,6 +13,7 @@ const vnsImg = { src: "/projects/vns.webp" };
 const navigatorImg = { src: "/projects/navigator_pm_map.webp" };
 const aleksyImg = { src: "/projects/aleksy/front.webp" };
 const aleksyV2Img = { src: "/projects/aleksy-v2/aleksy.webp" };
+const shipyardImg = { src: "/projects/shipyard_surfers.webp" };
 
 const PROJECTS = [
   {
@@ -52,6 +53,7 @@ const PROJECTS = [
     description:
       "Gra w stylu Subway Surfers sterowana gestami przed kamerą — model YOLO Pose rozpoznaje ruchy rąk gracza. Przygotowana na II Piknik Naukowy MCN.",
     members: 0,
+    image: shipyardImg.src,
     slug: "shipyard-surfers",
   },
   {

@@ -155,6 +155,7 @@ Sterowanie ruchem działa w całości lokalnie. Obraz z kamery trafia do modelu 
 Na stoisku gra wystawia też lokalny serwer WWW z tablicą wyników i podglądem z kamery, aktualizowanymi na żywo przez WebSocket.`,
     category: "Game Dev",
     status: "Zakończony",
+    cardImage: "/projects/shipyard_surfers.webp",
     techStack: [
       { name: "Unity 6", role: "Silnik gry (URP)" },
       { name: "C#", role: "Logika gry i sterowania" },
