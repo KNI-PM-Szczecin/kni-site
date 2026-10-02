@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { HACKATHONS } from "@/lib/hackathons";
@@ -17,6 +18,32 @@ export async function generateStaticParams() {
   return HACKATHONS.map((hackathon) => ({
     slug: hackathon.slug,
   }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const hackathon = HACKATHONS.find((h) => h.slug === slug);
+
+  if (!hackathon) return {};
+
+  return {
+    title: hackathon.title,
+    description: hackathon.description,
+    alternates: {
+      canonical: `/hackathon/${hackathon.slug}/`,
+    },
+    openGraph: {
+      title: hackathon.title,
+      description: hackathon.description,
+      images: [{ url: hackathon.image }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: hackathon.title,
+      description: hackathon.description,
+      images: [hackathon.image],
+    },
+  };
 }
 
 export default async function HackathonDetailPage({ params }: Props) {

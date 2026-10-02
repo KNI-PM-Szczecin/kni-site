@@ -1,7 +1,17 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
 import { FadeUp } from "@/components/ui/motion";
+
+export const metadata: Metadata = {
+  title: "Dołącz do nas",
+  description:
+    "Dołącz do Koła Naukowego Informatyki Politechniki Morskiej w Szczecinie. Rozwijaj się, buduj projekty i poznaj ludzi z pasją do technologii.",
+  alternates: {
+    canonical: "/join/",
+  },
+};
 
 export default function JoinPage() {
   return (

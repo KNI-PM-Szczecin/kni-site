@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { PROJECTS_DETAIL } from "@/lib/projects";
@@ -14,6 +15,34 @@ interface Props {
 
 export async function generateStaticParams() {
   return PROJECTS_DETAIL.map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const project = PROJECTS_DETAIL.find((p) => p.slug === slug);
+
+  if (!project) return {};
+
+  const image = project.heroImage ?? project.cardImage;
+
+  return {
+    title: project.title,
+    description: project.description,
+    alternates: {
+      canonical: `/project/${project.slug}/`,
+    },
+    openGraph: {
+      title: project.title,
+      description: project.description,
+      images: image ? [{ url: image }] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: project.title,
+      description: project.description,
+      images: image ? [image] : undefined,
+    },
+  };
 }
 
 const LINK_ICONS = {

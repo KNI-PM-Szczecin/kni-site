@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import { GOOFY_MOMENTS } from "@/lib/goofyMoments";
+
+export const metadata: Metadata = {
+  title: "Kulisy",
+  robots: { index: false, follow: false },
+};
 
 export default function KulisyPage() {
   return (

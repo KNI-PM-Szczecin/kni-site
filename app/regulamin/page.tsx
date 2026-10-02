@@ -1,6 +1,16 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { FadeUp } from "@/components/ui/motion";
+
+export const metadata: Metadata = {
+  title: "Regulamin członkostwa",
+  description:
+    "Regulamin członkostwa w Kole Naukowym Informatyki Politechniki Morskiej w Szczecinie.",
+  alternates: {
+    canonical: "/regulamin/",
+  },
+};
 
 export default function RegulaminPage() {
   return (

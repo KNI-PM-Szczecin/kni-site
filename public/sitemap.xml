@@ -57,14 +57,6 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Showcase -->
-  <url>
-    <loc>https://knipm.edu.pl/showcase/</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <!-- Projekt: Shipyard Surfers -->
   <url>
     <loc>https://knipm.edu.pl/project/shipyard-surfers/</loc>
