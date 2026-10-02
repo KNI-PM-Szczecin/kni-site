@@ -1,39 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Strona główna -->
   <url>
     <loc>https://knipm.edu.pl/</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Dołącz do nas -->
   <url>
     <loc>https://knipm.edu.pl/join/</loc>
     <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Hackathony – lista -->
   <url>
     <loc>https://knipm.edu.pl/hackathon/</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Hackathon Morski 2026 -->
+  <url>
+    <loc>https://knipm.edu.pl/hackathon/hackathon-morski-2026/</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- CyberMil 2026 -->
   <url>
     <loc>https://knipm.edu.pl/hackathon/cybermil-2026/</loc>
-    <lastmod>2026-04-16</lastmod>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- HackNation 2025 -->
+  <url>
+    <loc>https://knipm.edu.pl/hackathon/hacknation-2025/</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- HackYeah 2025 -->
   <url>
     <loc>https://knipm.edu.pl/hackathon/hackyeah-2025/</loc>
-    <lastmod>2025-09-29</lastmod>
+    <lastmod>2025-10-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Showcase -->
+  <url>
+    <loc>https://knipm.edu.pl/showcase/</loc>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Projekt: Shipyard Surfers -->
+  <url>
+    <loc>https://knipm.edu.pl/project/shipyard-surfers/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Projekt: ALEKSY v2 -->
+  <url>
+    <loc>https://knipm.edu.pl/project/aleksy-v2/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Projekt: ALEKSY -->
+  <url>
+    <loc>https://knipm.edu.pl/project/aleksy/</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Regulamin -->
   <url>
     <loc>https://knipm.edu.pl/regulamin/</loc>
     <lastmod>2026-06-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+
 </urlset>
